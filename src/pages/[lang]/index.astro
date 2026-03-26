@@ -1,0 +1,105 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import Hero from "@/components/Hero.astro";
+import Features from "@/components/Features.astro";
+import ComplianceSection from "@/components/ComplianceSection.astro";
+import PricingSection from "@/components/PricingSection.astro";
+import ScrollReveal from "@/components/ScrollReveal.tsx";
+import TemplateGallery from "@/components/TemplateGallery.tsx";
+import DeviceAwareCTA from "@/components/DeviceAwareCTA.tsx";
+import { t, type Lang } from "@/i18n/utils";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "ar" } },
+  ];
+}
+
+const { lang } = Astro.params as { lang: Lang };
+
+const templateTranslations = {
+  label: t(lang, "templates.label"),
+  title: t(lang, "templates.title"),
+  subtitle: t(lang, "templates.subtitle"),
+  cta: t(lang, "templates.cta"),
+  categories: {
+    all: t(lang, "templates.categories.all"),
+    classic: t(lang, "templates.categories.classic"),
+    modern: t(lang, "templates.categories.modern"),
+    professional: t(lang, "templates.categories.professional"),
+  },
+  items: {
+    classic: { name: t(lang, "templates.items.classic.name"), tag: t(lang, "templates.items.classic.tag") },
+    minimal: { name: t(lang, "templates.items.minimal.name"), tag: t(lang, "templates.items.minimal.tag") },
+    modern: { name: t(lang, "templates.items.modern.name"), tag: t(lang, "templates.items.modern.tag") },
+    bold: { name: t(lang, "templates.items.bold.name"), tag: t(lang, "templates.items.bold.tag") },
+    elegant: { name: t(lang, "templates.items.elegant.name"), tag: t(lang, "templates.items.elegant.tag") },
+    corporate: { name: t(lang, "templates.items.corporate.name"), tag: t(lang, "templates.items.corporate.tag") },
+    freelancer: { name: t(lang, "templates.items.freelancer.name"), tag: t(lang, "templates.items.freelancer.tag") },
+    commercial: { name: t(lang, "templates.items.commercial.name"), tag: t(lang, "templates.items.commercial.tag") },
+    executive: { name: t(lang, "templates.items.executive.name"), tag: t(lang, "templates.items.executive.tag") },
+    navy: { name: t(lang, "templates.items.navy.name"), tag: t(lang, "templates.items.navy.tag") },
+    fresh: { name: t(lang, "templates.items.fresh.name"), tag: t(lang, "templates.items.fresh.tag") },
+    refined: { name: t(lang, "templates.items.refined.name"), tag: t(lang, "templates.items.refined.tag") },
+    contractor: { name: t(lang, "templates.items.contractor.name"), tag: t(lang, "templates.items.contractor.tag") },
+    studio: { name: t(lang, "templates.items.studio.name"), tag: t(lang, "templates.items.studio.tag") },
+    hourly: { name: t(lang, "templates.items.hourly.name"), tag: t(lang, "templates.items.hourly.tag") },
+  },
+};
+---
+
+<PageLayout
+  title={t(lang, "meta.title")}
+  description={t(lang, "meta.description")}
+  lang={lang}
+>
+  <!-- Hero: no animation wrapper for LCP -->
+  <Hero lang={lang} />
+
+  <!-- Features -->
+  <ScrollReveal client:visible>
+    <Features lang={lang} />
+  </ScrollReveal>
+
+  <!-- Compliance -->
+  <ScrollReveal client:visible>
+    <ComplianceSection lang={lang} />
+  </ScrollReveal>
+
+  <!-- Templates -->
+  <section id="templates" class="py-20 sm:py-28">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center mb-12">
+        <span class="inline-block rounded-full bg-brand-50 px-4 py-1.5 text-sm font-semibold text-brand">
+          {t(lang, "templates.label")}
+        </span>
+        <h2 class="mt-4 text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
+          {t(lang, "templates.title")}
+        </h2>
+        <p class="mt-4 text-lg text-text-secondary leading-relaxed">
+          {t(lang, "templates.subtitle")}
+        </p>
+      </div>
+      <TemplateGallery
+        client:visible
+        lang={lang}
+        translations={templateTranslations}
+      />
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <ScrollReveal client:visible>
+    <PricingSection lang={lang} />
+  </ScrollReveal>
+
+  <!-- Bottom CTA -->
+  <DeviceAwareCTA
+    client:load
+    title={t(lang, "cta.title")}
+    subtitle={t(lang, "cta.subtitle")}
+    button={t(lang, "cta.button")}
+    note={t(lang, "cta.note")}
+  />
+</PageLayout>

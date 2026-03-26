@@ -1,0 +1,61 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+@theme {
+  --color-brand: #3053EC;
+  --color-brand-light: #4A6CF7;
+  --color-brand-dark: #2040C0;
+  --color-brand-50: #EEF2FF;
+  --color-brand-100: #DBE4FE;
+
+  --color-bg: #F7F9FB;
+  --color-card: #FFFFFF;
+  --color-surface: #F1F3F5;
+
+  --color-text-primary: #202325;
+  --color-text-secondary: #6D7289;
+  --color-text-tertiary: #979AAA;
+
+  --color-success: #23C16B;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+
+  --color-border: #E5E7EB;
+  --color-border-light: #F3F4F6;
+
+  --font-sans: "Inter Variable", "Inter", system-ui, -apple-system, sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+}
+
+html {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-brand);
+  color: white;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,213 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import { t, type Lang } from "@/i18n/utils";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "ar" } },
+  ];
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<PageLayout
+  title={`${t(lang, "privacy.title")} — SwiftBill`}
+  description={lang === "ar" ? "سياسة الخصوصية لتطبيق سويفت بيل" : "Privacy Policy for SwiftBill invoicing app"}
+  lang={lang}
+>
+  <div class="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+    <h1 class="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
+      {t(lang, "privacy.title")}
+    </h1>
+    <p class="mt-2 text-sm text-text-tertiary">
+      {t(lang, "privacy.lastUpdated")}
+    </p>
+
+    {lang === "ar" ? (
+      <div class="prose prose-gray mt-10 max-w-none prose-headings:text-text-primary prose-p:text-text-secondary prose-li:text-text-secondary prose-a:text-brand">
+        <h2>1. مقدمة</h2>
+        <p>
+          مرحباً بكم في سويفت بيل ("نحن"، "لنا"، "خاصتنا"). نحن ملتزمون بحماية خصوصيتكم.
+          توضح سياسة الخصوصية هذه كيفية جمع معلوماتكم الشخصية واستخدامها ومشاركتها وحمايتها
+          عند استخدام تطبيق سويفت بيل للهاتف المحمول وموقعنا الإلكتروني (يُشار إليهما مجتمعين بـ "الخدمة").
+        </p>
+
+        <h2>2. المعلومات التي نجمعها</h2>
+        <h3>2.1 المعلومات التي تقدمها</h3>
+        <ul>
+          <li><strong>معلومات الحساب:</strong> عنوان البريد الإلكتروني والاسم عند إنشاء حساب.</li>
+          <li><strong>الملف التجاري:</strong> اسم النشاط التجاري والعنوان ورقم الهاتف والرقم الضريبي ومعلومات الشعار.</li>
+          <li><strong>بيانات الفاتورة:</strong> معلومات العملاء وبنود الفاتورة والمبالغ وتفاصيل الضرائب.</li>
+          <li><strong>بيانات المصروفات:</strong> سجلات المصروفات بما في ذلك المبالغ والفئات وصور الإيصالات.</li>
+        </ul>
+
+        <h3>2.2 المعلومات المُجمعة تلقائياً</h3>
+        <ul>
+          <li><strong>بيانات الاستخدام:</strong> نستخدم TelemetryDeck للتحليلات مع الحفاظ على الخصوصية. لا يتم جمع أي معرفات شخصية أو معرفات أجهزة.</li>
+          <li><strong>بيانات الأعطال:</strong> قد يتم جمع تقارير أعطال مجهولة الهوية لتحسين استقرار التطبيق.</li>
+        </ul>
+
+        <h2>3. كيفية استخدام معلوماتكم</h2>
+        <p>نستخدم معلوماتكم من أجل:</p>
+        <ul>
+          <li>توفير وصيانة وتحسين الخدمة</li>
+          <li>إنشاء ومعالجة الفواتير والإيصالات والمستندات الأخرى</li>
+          <li>مزامنة بياناتكم عبر الأجهزة (في حال تفعيل المزامنة السحابية)</li>
+          <li>معالجة المدفوعات والاشتراكات</li>
+          <li>إرسال إشعارات تتعلق بالخدمة</li>
+          <li>تقديم ميزات الذكاء الاصطناعي (إنشاء المستندات وقراءة الإيصالات)</li>
+          <li>ضمان الامتثال الضريبي (رموز QR لزاتكا وتنسيق هيئة الضرائب الإماراتية)</li>
+        </ul>
+
+        <h2>4. خدمات الطرف الثالث</h2>
+        <p>نستخدم الخدمات التالية من أطراف ثالثة:</p>
+        <ul>
+          <li><strong>Supabase:</strong> للمصادقة وتخزين البيانات والمزامنة السحابية. تتم معالجة البيانات وفقاً لسياسة خصوصية Supabase.</li>
+          <li><strong>RevenueCat:</strong> لإدارة الاشتراكات والمشتريات داخل التطبيق. يعالج RevenueCat بيانات المعاملات وفقاً لسياسة خصوصيته.</li>
+          <li><strong>TelemetryDeck:</strong> للتحليلات مع الحفاظ على الخصوصية. لا يتم جمع أي بيانات شخصية — فقط بيانات استخدام مجمعة ومجهولة الهوية.</li>
+          <li><strong>Google Gemini:</strong> لميزات الذكاء الاصطناعي. تتم معالجة النصوص للإنشاء ولا يتم الاحتفاظ بها بواسطة Google.</li>
+        </ul>
+
+        <h2>5. خصوصية الأطفال</h2>
+        <p>
+          خدمتنا غير موجهة لأي شخص أقل من 13 عاماً. نحن لا نجمع معلومات شخصية عن قصد
+          من الأطفال دون سن 13 عاماً. إذا علمتم أن طفلاً قد قدم لنا بيانات شخصية،
+          يرجى التواصل معنا وسنتخذ الخطوات اللازمة لحذف تلك المعلومات.
+        </p>
+
+        <h2>6. الاحتفاظ بالبيانات</h2>
+        <p>
+          نحتفظ ببياناتكم الشخصية فقط طالما كان ذلك ضرورياً للأغراض المبينة في سياسة الخصوصية هذه.
+          تُحفظ البيانات المخزنة محلياً على جهازكم تحت سيطرتكم. يمكن حذف البيانات المتزامنة سحابياً
+          عن طريق حذف حسابكم.
+        </p>
+
+        <h2>7. حقوقكم</h2>
+        <p>لديكم الحق في:</p>
+        <ul>
+          <li>الوصول إلى بياناتكم الشخصية والحصول على نسخة منها</li>
+          <li>طلب تصحيح البيانات غير الدقيقة</li>
+          <li>طلب حذف بياناتكم الشخصية</li>
+          <li>تصدير بياناتكم بتنسيقات شائعة (CSV، PDF)</li>
+          <li>سحب موافقتكم على معالجة البيانات</li>
+        </ul>
+
+        <h2>8. أمن البيانات</h2>
+        <p>
+          نطبق إجراءات أمنية معيارية لحماية معلوماتكم الشخصية. تتضمن هذه الإجراءات
+          التشفير أثناء النقل (HTTPS/TLS)، والمصادقة الآمنة، وسياسات أمان قاعدة البيانات على مستوى الصفوف.
+          ومع ذلك، لا توجد وسيلة نقل عبر الإنترنت أو تخزين إلكتروني آمنة بنسبة 100%.
+        </p>
+
+        <h2>9. التغييرات على هذه السياسة</h2>
+        <p>
+          قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سنخطركم بأي تغييرات عن طريق
+          نشر السياسة الجديدة في هذه الصفحة وتحديث تاريخ "آخر تحديث".
+        </p>
+
+        <h2>10. تواصل معنا</h2>
+        <p>
+          إذا كان لديكم أي أسئلة حول سياسة الخصوصية هذه، يرجى التواصل معنا على:
+        </p>
+        <ul>
+          <li>البريد الإلكتروني: <a href="mailto:support@getswiftbill.app">support@getswiftbill.app</a></li>
+          <li>الموقع الإلكتروني: <a href="https://getswiftbill.app">https://getswiftbill.app</a></li>
+        </ul>
+      </div>
+    ) : (
+      <div class="prose prose-gray mt-10 max-w-none prose-headings:text-text-primary prose-p:text-text-secondary prose-li:text-text-secondary prose-a:text-brand">
+        <h2>1. Introduction</h2>
+        <p>
+          Welcome to SwiftBill ("we," "our," or "us"). We are committed to protecting your privacy.
+          This Privacy Policy explains how we collect, use, share, and protect your personal information
+          when you use the SwiftBill mobile application and our website (collectively, the "Service").
+        </p>
+
+        <h2>2. Information We Collect</h2>
+        <h3>2.1 Information You Provide</h3>
+        <ul>
+          <li><strong>Account Information:</strong> Email address and name when you create an account.</li>
+          <li><strong>Business Profile:</strong> Business name, address, phone number, tax registration number, and logo information.</li>
+          <li><strong>Invoice Data:</strong> Client information, line items, amounts, tax details, and document metadata.</li>
+          <li><strong>Expense Data:</strong> Expense records including amounts, categories, and receipt images.</li>
+        </ul>
+
+        <h3>2.2 Information Collected Automatically</h3>
+        <ul>
+          <li><strong>Usage Data:</strong> We use TelemetryDeck for privacy-preserving analytics. No personal identifiers or device IDs are collected.</li>
+          <li><strong>Crash Data:</strong> Anonymous crash reports may be collected to improve app stability.</li>
+        </ul>
+
+        <h2>3. How We Use Your Information</h2>
+        <p>We use your information to:</p>
+        <ul>
+          <li>Provide, maintain, and improve the Service</li>
+          <li>Generate and process invoices, receipts, and other documents</li>
+          <li>Sync your data across devices (when cloud sync is enabled)</li>
+          <li>Process payments and subscriptions</li>
+          <li>Send service-related notifications</li>
+          <li>Provide AI features (document generation, receipt scanning)</li>
+          <li>Ensure tax compliance (ZATCA QR codes, UAE FTA formatting)</li>
+        </ul>
+
+        <h2>4. Third-Party Services</h2>
+        <p>We use the following third-party services:</p>
+        <ul>
+          <li><strong>Supabase:</strong> For authentication, data storage, and cloud sync. Data is processed in accordance with Supabase's privacy policy.</li>
+          <li><strong>RevenueCat:</strong> For subscription and in-app purchase management. RevenueCat processes transaction data according to its privacy policy.</li>
+          <li><strong>TelemetryDeck:</strong> For privacy-preserving analytics. No personal data is collected — only aggregated, anonymized usage data.</li>
+          <li><strong>Google Gemini:</strong> For AI-powered features. Text is processed for generation and is not retained by Google.</li>
+        </ul>
+
+        <h2>5. Children's Privacy</h2>
+        <p>
+          Our Service is not directed to anyone under the age of 13. We do not knowingly collect
+          personal information from children under 13. If you become aware that a child has provided
+          us with personal data, please contact us and we will take steps to delete such information.
+        </p>
+
+        <h2>6. Data Retention</h2>
+        <p>
+          We retain your personal data only for as long as is necessary for the purposes set out
+          in this Privacy Policy. Locally stored data remains on your device under your control.
+          Cloud-synced data can be deleted by deleting your account.
+        </p>
+
+        <h2>7. Your Rights</h2>
+        <p>You have the right to:</p>
+        <ul>
+          <li>Access your personal data and receive a copy</li>
+          <li>Request correction of inaccurate data</li>
+          <li>Request deletion of your personal data</li>
+          <li>Export your data in common formats (CSV, PDF)</li>
+          <li>Withdraw your consent to data processing</li>
+        </ul>
+
+        <h2>8. Data Security</h2>
+        <p>
+          We implement industry-standard security measures to protect your personal information.
+          These include encryption in transit (HTTPS/TLS), secure authentication, and row-level
+          database security policies. However, no method of transmission over the Internet or
+          electronic storage is 100% secure.
+        </p>
+
+        <h2>9. Changes to This Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time. We will notify you of any changes
+          by posting the new policy on this page and updating the "Last updated" date.
+        </p>
+
+        <h2>10. Contact Us</h2>
+        <p>
+          If you have any questions about this Privacy Policy, please contact us at:
+        </p>
+        <ul>
+          <li>Email: <a href="mailto:support@getswiftbill.app">support@getswiftbill.app</a></li>
+          <li>Website: <a href="https://getswiftbill.app">https://getswiftbill.app</a></li>
+        </ul>
+      </div>
+    )}
+  </div>
+</PageLayout>

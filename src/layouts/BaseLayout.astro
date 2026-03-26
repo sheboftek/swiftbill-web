@@ -1,0 +1,90 @@
+---
+import "@/styles/global.css";
+import { type Lang } from "@/i18n/utils";
+import { getDir, getAlternateLinks } from "@/i18n/utils";
+
+interface Props {
+  title: string;
+  description: string;
+  lang: Lang;
+  ogImage?: string;
+  canonicalUrl?: string;
+}
+
+const { title, description, lang, ogImage, canonicalUrl } = Astro.props;
+const dir = getDir(lang);
+const alternateLinks = getAlternateLinks(lang, Astro.url.pathname);
+const siteUrl = "https://getswiftbill.app";
+const resolvedOgImage = ogImage ?? `${siteUrl}/images/og-default.png`;
+const resolvedCanonical = canonicalUrl ?? Astro.url.href;
+const ogLocale = lang === "ar" ? "ar_SA" : "en_US";
+---
+
+<!doctype html>
+<html lang={lang} dir={dir} class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <link rel="canonical" href={resolvedCanonical} />
+
+    {alternateLinks.map(({ lang: altLang, href }) => (
+      <link rel="alternate" hreflang={altLang} href={href} />
+    ))}
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href={alternateLinks.find((l) => l.lang === "en")?.href ?? siteUrl}
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={resolvedOgImage} />
+    <meta property="og:url" content={resolvedCanonical} />
+    <meta property="og:locale" content={ogLocale} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={resolvedOgImage} />
+
+    <!-- Apple Smart App Banner -->
+    <meta name="apple-itunes-app" content="app-id=6760855924" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Schema.org SoftwareApplication -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        name: "SwiftBill",
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "iOS",
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+        },
+        url: "https://apps.apple.com/app/id6760855924",
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "5",
+          ratingCount: "1",
+        },
+      })}
+    />
+  </head>
+  <body class="min-h-screen bg-bg text-text-primary antialiased">
+    <slot />
+  </body>
+</html>

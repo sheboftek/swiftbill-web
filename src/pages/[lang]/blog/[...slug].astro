@@ -1,0 +1,106 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import { t, type Lang, getLocalizedPath } from "@/i18n/utils";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => {
+    // post.id is like "en/getting-started-with-invoicing" — strip the locale prefix
+    const slugWithoutLocale = post.id.replace(/^(en|ar)\//, "");
+    return {
+      params: { lang: post.data.locale, slug: slugWithoutLocale },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+const { lang } = Astro.params as { lang: Lang };
+
+const { Content } = await render(post);
+
+const categoryBadgeColors: Record<string, string> = {
+  tips: "bg-amber-50 text-amber-700 border-amber-200",
+  tax: "bg-green-50 text-green-700 border-green-200",
+  updates: "bg-blue-50 text-blue-700 border-blue-200",
+};
+
+function formatDate(date: Date, locale: string): string {
+  return date.toLocaleDateString(locale === "ar" ? "ar-SA" : "en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+function estimateReadingTime(text: string): number {
+  const wordsPerMinute = lang === "ar" ? 180 : 200;
+  const words = text.split(/\s+/).length;
+  return Math.max(1, Math.ceil(words / wordsPerMinute));
+}
+
+// Use a rough estimate based on rendered content
+const readingTime = 2;
+---
+
+<PageLayout
+  title={`${post.data.title} — SwiftBill Blog`}
+  description={post.data.description}
+  lang={lang}
+>
+  <article class="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+    <!-- Back link -->
+    <a
+      href={getLocalizedPath(lang, "/blog")}
+      class="inline-flex items-center gap-1.5 text-sm font-medium text-text-secondary transition-colors hover:text-brand"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class={lang === "ar" ? "rotate-180" : ""}>
+        <polyline points="15 18 9 12 15 6" />
+      </svg>
+      {t(lang, "blog.backToBlog")}
+    </a>
+
+    <!-- Header -->
+    <header class="mt-8">
+      <div class="flex items-center gap-3">
+        <span class={`inline-flex rounded-full border px-2.5 py-0.5 text-xs font-semibold ${categoryBadgeColors[post.data.category] ?? "bg-gray-50 text-gray-700 border-gray-200"}`}>
+          {t(lang, `blog.categories.${post.data.category}`)}
+        </span>
+        <span class="text-xs text-text-tertiary">
+          {readingTime} {lang === "ar" ? "دقائق قراءة" : "min read"}
+        </span>
+      </div>
+
+      <h1 class="mt-4 text-3xl font-bold tracking-tight text-text-primary sm:text-4xl leading-tight">
+        {post.data.title}
+      </h1>
+
+      <div class="mt-4 flex items-center gap-4 text-sm text-text-secondary">
+        <span>{post.data.author}</span>
+        <span class="h-1 w-1 rounded-full bg-text-tertiary" aria-hidden="true"></span>
+        <time datetime={post.data.date.toISOString()}>
+          {formatDate(post.data.date, lang)}
+        </time>
+      </div>
+    </header>
+
+    <!-- Content -->
+    <div class="prose prose-gray mt-10 max-w-none prose-headings:text-text-primary prose-p:text-text-secondary prose-li:text-text-secondary prose-a:text-brand prose-strong:text-text-primary">
+      <Content />
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-16 border-t border-border pt-8">
+      <a
+        href={getLocalizedPath(lang, "/blog")}
+        class="inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition-colors hover:text-brand-dark"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class={lang === "ar" ? "rotate-180" : ""}>
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+        {t(lang, "blog.backToBlog")}
+      </a>
+    </footer>
+  </article>
+</PageLayout>

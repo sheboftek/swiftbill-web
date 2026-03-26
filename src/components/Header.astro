@@ -1,0 +1,226 @@
+---
+import { type Lang, t, getLocalizedPath } from "@/i18n/utils";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const navLinks = [
+  { label: t(lang, "nav.features"), href: `${getLocalizedPath(lang)}#features` },
+  { label: t(lang, "nav.pricing"), href: `${getLocalizedPath(lang)}#pricing` },
+  { label: t(lang, "nav.blog"), href: getLocalizedPath(lang, "/blog") },
+];
+
+const appStoreUrl = "https://apps.apple.com/app/id6760855924";
+---
+
+<header
+  class="sticky top-0 z-50 w-full border-b border-border/60 bg-white/80 backdrop-blur-xl"
+>
+  <nav
+    class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
+    aria-label="Main navigation"
+  >
+    <!-- Logo -->
+    <a
+      href={getLocalizedPath(lang)}
+      class="flex items-center gap-2 text-brand font-bold text-xl tracking-tight transition-opacity hover:opacity-80"
+      aria-label="SwiftBill Home"
+    >
+      <svg
+        width="28"
+        height="28"
+        viewBox="0 0 28 28"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <rect width="28" height="28" rx="7" fill="currentColor" />
+        <path
+          d="M16.5 4L10 15h4.5L12 24l8-11h-5l1.5-9z"
+          fill="white"
+          stroke="white"
+          stroke-width="0.5"
+          stroke-linejoin="round"
+        />
+      </svg>
+      <span>SwiftBill</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden items-center gap-8 lg:flex">
+      {
+        navLinks.map(({ label, href }) => (
+          <a
+            href={href}
+            class="text-sm font-medium text-text-secondary transition-colors hover:text-brand"
+          >
+            {label}
+          </a>
+        ))
+      }
+    </div>
+
+    <!-- Desktop Actions -->
+    <div class="hidden items-center gap-4 lg:flex">
+      <LanguageSwitcher lang={lang} />
+      <a
+        href={appStoreUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-brand-dark hover:shadow-md active:scale-[0.97]"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        {t(lang, "nav.download")}
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      type="button"
+      id="mobile-menu-toggle"
+      class="inline-flex items-center justify-center rounded-lg p-2 text-text-secondary transition-colors hover:bg-surface hover:text-text-primary lg:hidden"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Toggle menu"
+    >
+      <svg
+        id="menu-icon-open"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <svg
+        id="menu-icon-close"
+        class="hidden"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden border-t border-border/40 bg-white lg:hidden"
+  >
+    <div class="space-y-1 px-6 pb-6 pt-4">
+      {
+        navLinks.map(({ label, href }) => (
+          <a
+            href={href}
+            class="block rounded-lg px-4 py-3 text-base font-medium text-text-secondary transition-colors hover:bg-surface hover:text-brand"
+          >
+            {label}
+          </a>
+        ))
+      }
+
+      <div class="pt-4">
+        <LanguageSwitcher lang={lang} />
+      </div>
+
+      <div class="pt-2">
+        <a
+          href={appStoreUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex w-full items-center justify-center gap-2 rounded-full bg-brand px-5 py-3 text-base font-semibold text-white shadow-sm transition-all hover:bg-brand-dark"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          {t(lang, "nav.download")}
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById("mobile-menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const iconOpen = document.getElementById("menu-icon-open");
+  const iconClose = document.getElementById("menu-icon-close");
+
+  if (toggle && menu && iconOpen && iconClose) {
+    toggle.addEventListener("click", () => {
+      const isOpen = !menu.classList.contains("hidden");
+
+      if (isOpen) {
+        menu.classList.add("hidden");
+        iconOpen.classList.remove("hidden");
+        iconClose.classList.add("hidden");
+        toggle.setAttribute("aria-expanded", "false");
+      } else {
+        menu.classList.remove("hidden");
+        iconOpen.classList.add("hidden");
+        iconClose.classList.remove("hidden");
+        toggle.setAttribute("aria-expanded", "true");
+      }
+    });
+
+    // Close menu when clicking a link
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menu.classList.add("hidden");
+        iconOpen.classList.remove("hidden");
+        iconClose.classList.add("hidden");
+        toggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+</script>

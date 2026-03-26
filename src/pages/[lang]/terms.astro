@@ -1,0 +1,236 @@
+---
+import PageLayout from "@/layouts/PageLayout.astro";
+import { t, type Lang } from "@/i18n/utils";
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: "en" } },
+    { params: { lang: "ar" } },
+  ];
+}
+
+const { lang } = Astro.params as { lang: Lang };
+---
+
+<PageLayout
+  title={`${t(lang, "terms.title")} — SwiftBill`}
+  description={lang === "ar" ? "شروط خدمة تطبيق سويفت بيل" : "Terms of Service for SwiftBill invoicing app"}
+  lang={lang}
+>
+  <div class="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+    <h1 class="text-3xl font-bold tracking-tight text-text-primary sm:text-4xl">
+      {t(lang, "terms.title")}
+    </h1>
+    <p class="mt-2 text-sm text-text-tertiary">
+      {t(lang, "terms.lastUpdated")}
+    </p>
+
+    {lang === "ar" ? (
+      <div class="prose prose-gray mt-10 max-w-none prose-headings:text-text-primary prose-p:text-text-secondary prose-li:text-text-secondary prose-a:text-brand">
+        <h2>1. قبول الشروط</h2>
+        <p>
+          باستخدام تطبيق سويفت بيل للهاتف المحمول أو موقعنا الإلكتروني (يُشار إليهما مجتمعين بـ "الخدمة")،
+          فإنكم توافقون على الالتزام بشروط الخدمة هذه. إذا لم توافقوا على هذه الشروط،
+          يرجى عدم استخدام الخدمة.
+        </p>
+
+        <h2>2. الترخيص وحق الاستخدام</h2>
+        <p>
+          نمنحكم ترخيصاً محدوداً وغير حصري وغير قابل للتحويل وقابلاً للإلغاء لاستخدام
+          الخدمة لأغراضكم التجارية الشخصية أو الداخلية. يخضع هذا الترخيص لهذه الشروط
+          ولا يشمل حق إعادة بيع الخدمة أو توزيعها أو عمل هندسة عكسية لها.
+        </p>
+
+        <h2>3. حسابات المستخدمين</h2>
+        <p>
+          قد تحتاجون إلى إنشاء حساب لاستخدام بعض ميزات الخدمة. أنتم مسؤولون عن:
+        </p>
+        <ul>
+          <li>الحفاظ على سرية بيانات اعتماد حسابكم</li>
+          <li>جميع الأنشطة التي تحدث تحت حسابكم</li>
+          <li>إخطارنا فوراً بأي استخدام غير مصرح به</li>
+        </ul>
+
+        <h2>4. الاستخدام المحظور</h2>
+        <p>أنتم توافقون على عدم:</p>
+        <ul>
+          <li>استخدام الخدمة لأي غرض غير قانوني أو غير مصرح به</li>
+          <li>إنشاء فواتير أو مستندات مالية احتيالية</li>
+          <li>محاولة الوصول غير المصرح به إلى أنظمتنا أو حسابات مستخدمين آخرين</li>
+          <li>نقل أي فيروسات أو برامج ضارة أو أكواد مدمرة أخرى</li>
+          <li>انتهاك أي قوانين أو لوائح سارية</li>
+          <li>التدخل في التشغيل السليم للخدمة أو تعطيله</li>
+          <li>كشط أو جمع بيانات من الخدمة بطريقة آلية</li>
+        </ul>
+
+        <h2>5. المدفوعات والاشتراكات</h2>
+        <p>
+          تتوفر ميزات سويفت بيل المميزة من خلال خطط اشتراك يتم معالجتها عبر App Store من Apple.
+          تخضع جميع المشتريات لشروط وأحكام Apple. تشمل خطط الاشتراك:
+        </p>
+        <ul>
+          <li><strong>شهري:</strong> $5.99/شهر مع تجربة مجانية لمدة 3 أيام</li>
+          <li><strong>سنوي:</strong> $39.99/سنة مع تجربة مجانية لمدة 7 أيام</li>
+        </ul>
+        <p>
+          تتجدد الاشتراكات تلقائياً ما لم يتم إلغاؤها قبل 24 ساعة على الأقل من
+          نهاية الفترة الحالية. يمكنكم إدارة اشتراككم وإلغاؤه من خلال إعدادات حساب Apple الخاص بكم.
+        </p>
+
+        <h2>6. الملكية الفكرية</h2>
+        <p>
+          الخدمة ومحتواها الأصلي وميزاتها ووظائفها مملوكة لسويفت بيل ومحمية بموجب
+          قوانين حقوق الطبع والنشر والعلامات التجارية والقوانين الأخرى الدولية.
+          تحتفظون بملكية جميع البيانات والمحتوى الذي تنشئونه باستخدام الخدمة.
+        </p>
+
+        <h2>7. تحديد المسؤولية</h2>
+        <p>
+          إلى أقصى حد يسمح به القانون المعمول به، لن تكون سويفت بيل أو مديروها أو موظفوها
+          أو شركاؤها أو وكلاؤها أو مورّدوها أو المرتبطون بها مسؤولين عن أي أضرار غير مباشرة
+          أو عرضية أو خاصة أو تبعية أو عقابية، بما في ذلك على سبيل المثال لا الحصر:
+        </p>
+        <ul>
+          <li>فقدان الأرباح أو البيانات أو الشهرة</li>
+          <li>تعطل الأعمال</li>
+          <li>تكلفة الحصول على خدمات بديلة</li>
+        </ul>
+
+        <h2>8. إخلاء المسؤولية</h2>
+        <p>
+          تُقدم الخدمة "كما هي" و"كما تتوفر" دون ضمانات من أي نوع. لا نضمن أن الخدمة
+          ستكون خالية من الأخطاء أو متاحة دون انقطاع. لا تُعد الخدمة بديلاً
+          عن المشورة المحاسبية أو القانونية أو الضريبية المهنية.
+        </p>
+
+        <h2>9. القانون الحاكم</h2>
+        <p>
+          تخضع هذه الشروط وتُفسر وفقاً للقوانين السارية في نطاق اختصاصنا القضائي،
+          بصرف النظر عن أحكام تعارض القوانين.
+        </p>
+
+        <h2>10. التغييرات على هذه الشروط</h2>
+        <p>
+          نحتفظ بالحق في تعديل هذه الشروط في أي وقت. سنخطركم بالتغييرات عن طريق
+          نشر الشروط المحدثة في هذه الصفحة وتحديث تاريخ "آخر تحديث".
+          استمراركم في استخدام الخدمة بعد هذه التغييرات يعني قبولكم للشروط المعدلة.
+        </p>
+
+        <h2>11. تواصل معنا</h2>
+        <p>
+          إذا كان لديكم أي أسئلة حول شروط الخدمة هذه، يرجى التواصل معنا على:
+        </p>
+        <ul>
+          <li>البريد الإلكتروني: <a href="mailto:support@getswiftbill.app">support@getswiftbill.app</a></li>
+          <li>الموقع الإلكتروني: <a href="https://getswiftbill.app">https://getswiftbill.app</a></li>
+        </ul>
+      </div>
+    ) : (
+      <div class="prose prose-gray mt-10 max-w-none prose-headings:text-text-primary prose-p:text-text-secondary prose-li:text-text-secondary prose-a:text-brand">
+        <h2>1. Acceptance of Terms</h2>
+        <p>
+          By using the SwiftBill mobile application or our website (collectively, the "Service"),
+          you agree to be bound by these Terms of Service. If you do not agree to these terms,
+          please do not use the Service.
+        </p>
+
+        <h2>2. License and Usage Rights</h2>
+        <p>
+          We grant you a limited, non-exclusive, non-transferable, and revocable license to use
+          the Service for your personal or internal business purposes. This license is subject to
+          these Terms and does not include the right to resell, distribute, or reverse-engineer the Service.
+        </p>
+
+        <h2>3. User Accounts</h2>
+        <p>
+          You may need to create an account to use certain features of the Service. You are responsible for:
+        </p>
+        <ul>
+          <li>Maintaining the confidentiality of your account credentials</li>
+          <li>All activities that occur under your account</li>
+          <li>Notifying us immediately of any unauthorized use</li>
+        </ul>
+
+        <h2>4. Prohibited Use</h2>
+        <p>You agree not to:</p>
+        <ul>
+          <li>Use the Service for any unlawful or unauthorized purpose</li>
+          <li>Create fraudulent invoices or financial documents</li>
+          <li>Attempt to gain unauthorized access to our systems or other users' accounts</li>
+          <li>Transmit any viruses, malware, or other destructive code</li>
+          <li>Violate any applicable laws or regulations</li>
+          <li>Interfere with or disrupt the proper functioning of the Service</li>
+          <li>Scrape or harvest data from the Service in an automated manner</li>
+        </ul>
+
+        <h2>5. Payments and Subscriptions</h2>
+        <p>
+          SwiftBill's premium features are available through subscription plans processed via
+          the Apple App Store. All purchases are subject to Apple's terms and conditions.
+          Subscription plans include:
+        </p>
+        <ul>
+          <li><strong>Monthly:</strong> $5.99/month with a 3-day free trial</li>
+          <li><strong>Yearly:</strong> $39.99/year with a 7-day free trial</li>
+        </ul>
+        <p>
+          Subscriptions automatically renew unless cancelled at least 24 hours before the end
+          of the current period. You can manage and cancel your subscription through your
+          Apple account settings.
+        </p>
+
+        <h2>6. Intellectual Property</h2>
+        <p>
+          The Service and its original content, features, and functionality are owned by
+          SwiftBill and are protected by international copyright, trademark, and other
+          intellectual property laws. You retain ownership of all data and content you
+          create using the Service.
+        </p>
+
+        <h2>7. Limitation of Liability</h2>
+        <p>
+          To the maximum extent permitted by applicable law, SwiftBill and its directors,
+          employees, partners, agents, suppliers, or affiliates shall not be liable for
+          any indirect, incidental, special, consequential, or punitive damages, including
+          but not limited to:
+        </p>
+        <ul>
+          <li>Loss of profits, data, or goodwill</li>
+          <li>Business interruption</li>
+          <li>Cost of procurement of substitute services</li>
+        </ul>
+
+        <h2>8. Disclaimer of Warranties</h2>
+        <p>
+          The Service is provided "as is" and "as available" without warranties of any kind.
+          We do not guarantee that the Service will be error-free or available without
+          interruption. The Service is not a substitute for professional accounting, legal,
+          or tax advice.
+        </p>
+
+        <h2>9. Governing Law</h2>
+        <p>
+          These Terms shall be governed by and construed in accordance with the laws
+          applicable in our jurisdiction, without regard to conflict of law provisions.
+        </p>
+
+        <h2>10. Changes to These Terms</h2>
+        <p>
+          We reserve the right to modify these Terms at any time. We will notify you of
+          changes by posting the updated Terms on this page and updating the "Last updated"
+          date. Your continued use of the Service after such changes constitutes acceptance
+          of the revised Terms.
+        </p>
+
+        <h2>11. Contact Us</h2>
+        <p>
+          If you have any questions about these Terms of Service, please contact us at:
+        </p>
+        <ul>
+          <li>Email: <a href="mailto:support@getswiftbill.app">support@getswiftbill.app</a></li>
+          <li>Website: <a href="https://getswiftbill.app">https://getswiftbill.app</a></li>
+        </ul>
+      </div>
+    )}
+  </div>
+</PageLayout>
