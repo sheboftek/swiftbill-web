@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://getswiftbill.app/sitemap-index.xml
+Sitemap: https://getswiftbill.app/sitemap.xml

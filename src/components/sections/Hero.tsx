@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { type Lang, t } from "@/i18n/utils";
+import type { Country } from "@/i18n/countries";
 import { NumberTicker } from "@/components/magicui/number-ticker";
 
 const APP_STORE_URL = "https://apps.apple.com/app/id6760855924";
@@ -31,13 +32,35 @@ const fadeUp = {
 };
 
 /* ─── Trust bar items ─── */
-const trustItems = [
+const trustItemsGeneric = [
   "Freelancers",
   "Designers",
   "Contractors",
   "Consultants",
   "Small Businesses",
 ];
+
+const trustItemsSaudi = [
+  "Saudi Freelancers",
+  "Riyadh",
+  "Jeddah",
+  "ZATCA",
+  "Contractors",
+];
+
+const trustItemsUAE = [
+  "Dubai Freelancers",
+  "Abu Dhabi",
+  "Emirates",
+  "FTA",
+  "Consultants",
+];
+
+function getTrustItems(country?: Country): string[] {
+  if (country === "sa") return trustItemsSaudi;
+  if (country === "ae") return trustItemsUAE;
+  return trustItemsGeneric;
+}
 
 /* ─── Invoice mockup line-item data ─── */
 const lineItems = [
@@ -49,7 +72,8 @@ const lineItems = [
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    Hero
    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-export function Hero({ lang }: { lang: Lang }) {
+export function Hero({ lang, country }: { lang: Lang; country?: Country }) {
+  const trustItems = getTrustItems(country);
   return (
     <>
       <section className="bg-[#efeef3]">
@@ -68,7 +92,7 @@ export function Hero({ lang }: { lang: Lang }) {
             {/* Badge pill */}
             <motion.div variants={fadeUp}>
               <span className="inline-flex items-center rounded-full border border-[#3053EC]/20 bg-[#3053EC]/5 px-4 py-1.5 text-xs font-medium text-[#3053EC]">
-                {t(lang, "features.label")}
+                {t(lang, "hero.badge", country)}
               </span>
             </motion.div>
 
@@ -77,9 +101,9 @@ export function Hero({ lang }: { lang: Lang }) {
               variants={fadeUp}
               className="mt-8 font-heading text-[#151515]"
             >
-              {t(lang, "hero.title")}{" "}
+              {t(lang, "hero.title", country)}{" "}
               <span className="text-[#3053EC]">
-                {t(lang, "hero.titleHighlight")}
+                {t(lang, "hero.titleHighlight", country)}
               </span>
             </motion.h3>
 
@@ -88,7 +112,7 @@ export function Hero({ lang }: { lang: Lang }) {
               variants={fadeUp}
               className="mt-5 max-w-[480px] text-[16px] leading-[130%] tracking-[-0.16px] text-[#6a6a84]"
             >
-              {t(lang, "hero.subtitle")}
+              {t(lang, "hero.subtitle", country)}
             </motion.p>
 
             {/* CTAs — mt-40px, gap-16px */}

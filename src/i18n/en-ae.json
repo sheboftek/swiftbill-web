@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "title": "SwiftBill — UAE FTA Invoice App | Professional Invoicing for UAE",
+    "description": "Create invoices following UAE FTA guidelines with TRN display, VAT breakdown, and bilingual English/Arabic support. The #1 invoicing app for UAE freelancers and businesses.",
+    "ogTitle": "SwiftBill — UAE FTA Invoice App"
+  },
+  "hero": {
+    "badge": "Built for the UAE",
+    "title": "UAE FTA invoices",
+    "titleHighlight": "done right.",
+    "subtitle": "Professional invoices following UAE Federal Tax Authority guidelines with TRN display, VAT breakdown, and bilingual support. Built for freelancers and businesses in Dubai, Abu Dhabi, and all Emirates."
+  },
+  "features": {
+    "subtitle": "Whether you're a freelancer in Dubai, a contractor in Abu Dhabi, or a consultant anywhere in the UAE — SwiftBill handles invoices, expenses, and FTA formatting so you focus on your work."
+  }
+}

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { type Lang, t } from "@/i18n/utils";
+import type { Country } from "@/i18n/countries";
 
 const APP_STORE_URL = "https://apps.apple.com/app/id6760855924";
 
@@ -46,16 +47,18 @@ function ComplianceCard({
   title,
   features,
   index,
+  prominent = false,
 }: {
   flag: string;
   badge: string;
   title: string;
   features: string[];
   index: number;
+  prominent?: boolean;
 }) {
   return (
     <motion.div
-      className="rounded-[16px] bg-[#efeef3] p-[30px] ps-[36px] pe-[36px]"
+      className={`rounded-[16px] bg-[#efeef3] ps-[36px] pe-[36px] ${prominent ? "p-[40px] ring-2 ring-[#3053EC]/20" : "p-[30px]"}`}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
@@ -67,7 +70,7 @@ function ComplianceCard({
     >
       {/* Flag + badge row */}
       <div className="flex items-center gap-3">
-        <span className="text-4xl" role="img" aria-label={title}>
+        <span className={prominent ? "text-5xl" : "text-4xl"} role="img" aria-label={title}>
           {flag}
         </span>
         <span className="rounded-full bg-[#3053EC]/10 px-3 py-1 text-sm font-medium text-[#3053EC]">
@@ -75,11 +78,11 @@ function ComplianceCard({
         </span>
       </div>
 
-      {/* Title — h5: 42px, 500 weight, -0.42px tracking, 110% line-height */}
+      {/* Title */}
       <h3
         className="mt-4 font-heading font-medium text-[#151515]"
         style={{
-          fontSize: "clamp(32px, 4vw, 42px)",
+          fontSize: prominent ? "clamp(36px, 4.5vw, 48px)" : "clamp(32px, 4vw, 42px)",
           letterSpacing: "-0.42px",
           lineHeight: "110%",
         }}
@@ -92,7 +95,7 @@ function ComplianceCard({
         {features.map((feature, i) => (
           <li key={i} className="flex items-center gap-3">
             <CheckCircle />
-            <span className="text-[18px] font-medium text-[#151515]">
+            <span className={`font-medium text-[#151515] ${prominent ? "text-[20px]" : "text-[18px]"}`}>
               {feature}
             </span>
           </li>
@@ -122,7 +125,7 @@ function AppleIcon() {
 /* ------------------------------------------------------------------ */
 /*  Main Compliance section                                            */
 /* ------------------------------------------------------------------ */
-export default function Compliance({ lang }: { lang: Lang }) {
+export default function Compliance({ lang, country }: { lang: Lang; country?: Country }) {
   const zatcaFeatures = [0, 1, 2, 3].map((i) =>
     t(lang, `compliance.zatca.features.${i}`)
   );
@@ -130,6 +133,45 @@ export default function Compliance({ lang }: { lang: Lang }) {
   const uaeFeatures = [0, 1, 2, 3].map((i) =>
     t(lang, `compliance.uae.features.${i}`)
   );
+
+  // Determine which card is prominent based on country
+  const zatcaProminent = country === "sa";
+  const uaeProminent = country === "ae";
+
+  // Order cards: prominent card first when country is set
+  const zatcaCard = (
+    <ComplianceCard
+      flag={"\ud83c\uddf8\ud83c\udde6"}
+      badge={t(lang, "compliance.zatca.subtitle")}
+      title={t(lang, "compliance.zatca.title")}
+      features={zatcaFeatures}
+      index={country === "ae" ? 1 : 0}
+      prominent={zatcaProminent}
+    />
+  );
+
+  const uaeCard = (
+    <ComplianceCard
+      flag={"\ud83c\udde6\ud83c\uddea"}
+      badge={t(lang, "compliance.uae.subtitle")}
+      title={t(lang, "compliance.uae.title")}
+      features={uaeFeatures}
+      index={country === "ae" ? 0 : 1}
+      prominent={uaeProminent}
+    />
+  );
+
+  // Show the relevant country card first
+  const firstCard = country === "ae" ? uaeCard : zatcaCard;
+  const secondCard = country === "ae" ? zatcaCard : uaeCard;
+
+  // Left column description changes based on country
+  const leftTitle = country === "ae"
+    ? t(lang, "compliance.uae.title")
+    : t(lang, "compliance.zatca.title");
+  const leftDescription = country === "ae"
+    ? t(lang, "compliance.uae.description")
+    : t(lang, "compliance.zatca.description");
 
   return (
     <section id="compliance" style={{ paddingBlockStart: 120, paddingBlockEnd: 120, background: "white" }}>
@@ -145,7 +187,7 @@ export default function Compliance({ lang }: { lang: Lang }) {
               transition={{ duration: 0.6, ease: EASE }}
               className="font-heading font-medium text-[#151515]"
             >
-              {t(lang, "compliance.zatca.title")}
+              {leftTitle}
             </motion.h3>
 
             <motion.p
@@ -160,7 +202,7 @@ export default function Compliance({ lang }: { lang: Lang }) {
                 lineHeight: "133%",
               }}
             >
-              {t(lang, "compliance.zatca.description")}
+              {leftDescription}
             </motion.p>
 
             {/* CTA below text — left-aligned */}
@@ -185,21 +227,8 @@ export default function Compliance({ lang }: { lang: Lang }) {
 
           {/* Right column — stacked compliance cards (50%) */}
           <div className="flex flex-col gap-[20px] lg:w-1/2">
-            <ComplianceCard
-              flag={"\ud83c\uddf8\ud83c\udde6"}
-              badge={t(lang, "compliance.zatca.subtitle")}
-              title={t(lang, "compliance.zatca.title")}
-              features={zatcaFeatures}
-              index={0}
-            />
-
-            <ComplianceCard
-              flag={"\ud83c\udde6\ud83c\uddea"}
-              badge={t(lang, "compliance.uae.subtitle")}
-              title={t(lang, "compliance.uae.title")}
-              features={uaeFeatures}
-              index={1}
-            />
+            {firstCard}
+            {secondCard}
           </div>
         </div>
       </div>
