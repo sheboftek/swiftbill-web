@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { type Lang, t, getLocalizedPath } from "@/i18n/utils";
 
@@ -10,11 +11,26 @@ const APP_STORE_URL = "https://apps.apple.com/app/id6760855924";
 /* Onramper easing */
 const EASE_ONRAMPER: [number, number, number, number] = [0.86, 0, 0.07, 1];
 
+/** Extract country slug from pathname (e.g., /en/saudi → "saudi", /en → null) */
+function getCountryFromPath(pathname: string): string | null {
+  const segments = pathname.split("/").filter(Boolean);
+  // segments[0] = lang, segments[1] = country or page
+  if (segments.length >= 2) {
+    const second = segments[1];
+    if (second === "uae" || second === "saudi") return second;
+  }
+  return null;
+}
+
 export function Header({ lang }: { lang: Lang }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
+  const pathname = usePathname();
   const dir = lang === "ar" ? "rtl" : "ltr";
+
+  // Detect country from current URL to preserve it when switching languages
+  const currentCountry = getCountryFromPath(pathname);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -43,6 +59,9 @@ export function Header({ lang }: { lang: Lang }) {
 
   const altLang = lang === "en" ? "ar" : "en";
   const altLabel = lang === "en" ? "AR" : "EN";
+  const altLangHref = currentCountry
+    ? `/${altLang}/${currentCountry}/`
+    : getLocalizedPath(altLang);
 
   return (
     <header
@@ -130,7 +149,7 @@ export function Header({ lang }: { lang: Lang }) {
         <div className="hidden items-center gap-3 md:flex">
           {/* Language toggle — secondary button style */}
           <Link
-            href={getLocalizedPath(altLang)}
+            href={altLangHref}
             className="button secondary"
             style={{
               padding: "10px 20px",
@@ -271,7 +290,7 @@ export function Header({ lang }: { lang: Lang }) {
                 }}
               >
                 <Link
-                  href={getLocalizedPath(altLang)}
+                  href={altLangHref}
                   onClick={() => setMobileOpen(false)}
                   className="block font-heading"
                   style={{

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { type Lang, t, getLocalizedPath } from "@/i18n/utils";
 
@@ -92,6 +93,13 @@ function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) 
 export function Footer({ lang }: { lang: Lang }) {
   const dir = lang === "ar" ? "rtl" : "ltr";
   const year = new Date().getFullYear();
+  const pathname = usePathname();
+
+  // Detect country from current URL to preserve when switching languages
+  const segments = pathname.split("/").filter(Boolean);
+  const currentCountry = segments.length >= 2 && (segments[1] === "uae" || segments[1] === "saudi") ? segments[1] : null;
+  const altLang = lang === "en" ? "ar" : "en";
+  const altLangHref = currentCountry ? `/${altLang}/${currentCountry}/` : getLocalizedPath(altLang);
 
   const columns = [
     {
@@ -266,7 +274,7 @@ export function Footer({ lang }: { lang: Lang }) {
           </span>
 
           <Link
-            href={getLocalizedPath(lang === "en" ? "ar" : "en")}
+            href={altLangHref}
             style={{
               fontSize: 16,
               fontWeight: 500,

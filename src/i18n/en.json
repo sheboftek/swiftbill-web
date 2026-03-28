@@ -62,7 +62,7 @@
     "title": "Built for the Gulf Region",
     "subtitle": "SwiftBill generates invoices following published ZATCA and UAE FTA format requirements. Requirements may change — always verify with your tax advisor.",
     "zatca": {
-      "title": "ZATCA Phase 1 Format",
+      "title": "Zakat, Tax and Customs Authority (ZATCA) Phase 1 Format",
       "subtitle": "Saudi Arabia",
       "description": "QR code generation following published TLV encoding specs, Arabic and bilingual invoice formats, VAT calculations, and seller/buyer tax registration number fields.",
       "features": ["QR Code with TLV Encoding", "Arabic & Bilingual Formats", "VAT Calculation", "Tax Registration Numbers"]

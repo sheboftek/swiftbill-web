@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "SwiftBill — ZATCA Invoice App | E-Invoicing for Saudi Arabia",
+    "title": "SwiftBill — Zakat, Tax and Customs Authority (ZATCA) Invoice App | E-Invoicing for Saudi Arabia",
     "description": "Generate invoices following ZATCA Phase 1 specifications with QR codes, TLV encoding, and Arabic formats. Built for Saudi freelancers and businesses.",
-    "ogTitle": "SwiftBill — ZATCA Invoice App for Saudi Arabia"
+    "ogTitle": "SwiftBill — ZATCA E-Invoice App for Saudi Arabia"
   },
   "hero": {
     "badge": "Built for Saudi Arabia",
     "title": "ZATCA e-invoices",
     "titleHighlight": "made simple.",
-    "subtitle": "Generate invoices following ZATCA Phase 1 published specifications with QR codes, TLV encoding, and Arabic/bilingual formats. Built for Saudi freelancers, contractors, and businesses."
+    "subtitle": "Generate invoices following Zakat, Tax and Customs Authority (ZATCA) Phase 1 published specifications with QR codes, TLV encoding, and Arabic/bilingual formats. Built for Saudi freelancers, contractors, and businesses."
   },
   "features": {
     "subtitle": "Whether you're a freelancer in Riyadh, a contractor in Jeddah, or a consultant anywhere in the Kingdom — SwiftBill handles invoices, expenses, and ZATCA formatting so you focus on your work."
