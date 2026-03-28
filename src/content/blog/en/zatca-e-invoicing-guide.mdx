@@ -1,0 +1,165 @@
+---
+title: "ZATCA E-Invoice Phase 1: Complete Guide for Saudi Freelancers in 2026"
+description: "Everything Saudi freelancers need to know about ZATCA Phase 1 e-invoicing — required fields, QR code specifications, TLV encoding, and how to stay compliant."
+date: 2026-03-27
+category: "tax"
+locale: "en"
+author: "SwiftBill Team"
+---
+
+If you are a freelancer or small business owner operating in Saudi Arabia, electronic invoicing is no longer optional. The Zakat, Tax and Customs Authority (ZATCA) launched its e-invoicing mandate in phases, and Phase 1 — known as the "Generation Phase" — requires every VAT-registered taxpayer to generate invoices electronically through a compliant system.
+
+This guide breaks down exactly what Phase 1 requires, who needs to comply, and how to make sure your invoices meet ZATCA's specifications without hiring a compliance consultant.
+
+## What Is ZATCA E-Invoicing?
+
+ZATCA's e-invoicing initiative aims to digitize the entire invoicing lifecycle in Saudi Arabia. The goal is to reduce fraud, improve tax collection accuracy, and bring Saudi Arabia's business infrastructure in line with global digital standards.
+
+The mandate rolled out in two main phases:
+
+- **Phase 1 (Generation Phase):** All VAT-registered taxpayers must generate invoices and notes electronically using a compliant system. Handwritten invoices, Word documents, and manually created Excel spreadsheets are no longer acceptable.
+- **Phase 2 (Integration Phase):** Businesses must integrate their invoicing systems directly with ZATCA's platform (FATOORA) for real-time or near-real-time reporting and clearance.
+
+Phase 1 has been in effect since December 4, 2021. Phase 2 is being rolled out in waves based on business revenue thresholds.
+
+## Who Needs to Comply with Phase 1?
+
+Phase 1 applies to all taxpayers who are:
+
+- **Resident in Saudi Arabia** for tax purposes
+- **Registered for VAT** with ZATCA
+- **Issuing tax invoices** — whether simplified (B2C) or standard (B2B)
+
+This includes sole proprietors, freelancers with a VAT registration, companies of all sizes, and any third party issuing invoices on behalf of a taxpayer.
+
+If you are a freelancer earning below the mandatory VAT registration threshold (SAR 375,000 annually) and have not voluntarily registered, you are not currently required to comply with the e-invoicing mandate. However, if you have voluntarily registered for VAT, you must comply.
+
+## Required Fields on Every E-Invoice
+
+ZATCA specifies a set of mandatory fields that must appear on every electronic invoice. Missing any of these can result in non-compliance:
+
+**For All Invoice Types:**
+- Seller's full name (in Arabic)
+- VAT registration number (TIN/TRN)
+- Invoice date and time of issuance
+- Sequential invoice number
+- Description of goods or services
+- Quantity and unit price
+- Total amount excluding VAT
+- VAT rate applied
+- Total VAT amount
+- Total amount including VAT
+- Currency code (SAR or foreign currency)
+
+**Additional Fields for Standard Invoices (B2B):**
+- Buyer's name and address
+- Buyer's VAT registration number
+- Payment terms and method
+
+**Additional Fields for Simplified Invoices (B2C):**
+- QR code containing TLV-encoded data (see below)
+
+## The QR Code Requirement Explained
+
+The QR code is one of the most distinctive requirements of Phase 1. Every simplified tax invoice (B2C transaction) must include a scannable QR code that encodes specific data in TLV (Tag-Length-Value) format.
+
+### What Data Goes in the QR Code?
+
+The QR code must contain exactly five data fields, encoded in a specific order:
+
+| Tag | Field | Example |
+|-----|-------|---------|
+| 1 | Seller's name | "Ahmed Mohammed Trading" |
+| 2 | VAT registration number | "300000000000003" |
+| 3 | Invoice timestamp | "2026-03-27T14:30:00Z" |
+| 4 | Invoice total (with VAT) | "1150.00" |
+| 5 | Total VAT amount | "150.00" |
+
+### How TLV Encoding Works
+
+TLV stands for Tag-Length-Value. Each field is encoded as three parts:
+
+1. **Tag:** A single byte identifying the field (1 through 5)
+2. **Length:** A single byte indicating the byte length of the value
+3. **Value:** The actual data as a UTF-8 encoded byte string
+
+All five TLV segments are concatenated into a single byte array, which is then Base64-encoded to produce the final string embedded in the QR code.
+
+For example, if the seller's name is "Ahmed" (5 bytes in UTF-8), the TLV for tag 1 would be: `0x01 0x05 0x41 0x68 0x6D 0x65 0x64`.
+
+You do not need to understand the byte-level details. A compliant invoicing tool handles this automatically.
+
+### QR Code Format
+
+The QR code itself should be a standard QR code (not a barcode or proprietary format). It should be clearly visible on the printed or displayed invoice, large enough to scan reliably — typically at least 2cm x 2cm.
+
+## Common Phase 1 Compliance Mistakes
+
+Based on ZATCA's published guidance and common enforcement actions, these are the most frequent mistakes freelancers make:
+
+### 1. Missing Arabic Text
+Even if your client is an English-speaking company, ZATCA requires Arabic text on invoices. Bilingual invoices (Arabic + English) are accepted and recommended for international clients, but Arabic-only is the minimum.
+
+### 2. Using Word or Excel for Invoices
+Phase 1 explicitly prohibits manually created invoices. Your invoices must be generated by an electronic system that enforces sequential numbering and includes the required fields automatically. A Word template does not qualify.
+
+### 3. Incorrect QR Code Encoding
+A QR code that simply contains your website URL or plain-text invoice data is not compliant. The QR code must use TLV encoding with the exact five data fields in the correct order, Base64-encoded. Many generic QR code generators cannot do this.
+
+### 4. Non-Sequential Invoice Numbers
+Invoice numbers must be sequential and unique. Gaps in numbering (skipping from INV-005 to INV-010) can raise audit flags. Your system should automatically increment numbers without allowing manual overrides that break the sequence.
+
+### 5. Missing UUID
+Each invoice must carry a Universally Unique Identifier (UUID) — a 128-bit identifier that is separate from your invoice number. This ensures every document can be uniquely identified across systems.
+
+### 6. Editing Invoices Outside the System
+If you generate an invoice in your invoicing tool and then edit the PDF in Acrobat or another editor, the invoice is no longer compliant. All modifications must be made within the generation system, creating a new version or credit note as needed.
+
+## Phase 2: What Comes Next
+
+Phase 2 requires direct integration between your invoicing system and ZATCA's FATOORA platform. This means:
+
+- **Standard invoices (B2B)** must be submitted to ZATCA for clearance before being sent to the buyer
+- **Simplified invoices (B2C)** must be reported to ZATCA within 24 hours of issuance
+- Additional cryptographic controls including invoice hashing and digital signatures
+
+Phase 2 is being rolled out in waves. The initial waves targeted businesses with annual revenue above SAR 3 billion, then SAR 500 million, and progressively lower thresholds. Freelancers and small businesses should monitor ZATCA announcements for their wave assignment.
+
+## How SwiftBill Helps You Stay Compliant
+
+SwiftBill was built with ZATCA Phase 1 compliance as a core feature, not an afterthought. Here is what it handles automatically:
+
+- **TLV-encoded QR codes** generated on every invoice with the correct five data fields
+- **Arabic and bilingual invoice templates** across all 15 PDF designs
+- **Sequential invoice numbering** enforced by the system — no gaps, no duplicates
+- **All required fields** pre-configured in the invoice form, so nothing gets missed
+- **VAT calculations** applied automatically based on your configured tax rate
+- **UUID generation** on every document
+- **Business profile** that stores your VAT number, business name (Arabic and English), and contact details for automatic population
+
+You fill in your business details once, and SwiftBill ensures every invoice you create meets ZATCA's published specifications.
+
+## Checklist: Are Your Invoices Phase 1 Compliant?
+
+Use this quick checklist to verify your current invoices:
+
+- [ ] Generated electronically (not Word/Excel/handwritten)
+- [ ] Contains seller name in Arabic
+- [ ] Includes VAT registration number
+- [ ] Shows invoice date and time
+- [ ] Has a sequential, unique invoice number
+- [ ] Includes UUID
+- [ ] Line items with description, quantity, unit price
+- [ ] VAT rate, VAT amount, and total with VAT clearly displayed
+- [ ] QR code with TLV-encoded data (for simplified invoices)
+- [ ] No manual post-generation edits to the PDF
+
+If any box is unchecked, your invoices may not be compliant and could be flagged during a ZATCA audit.
+
+---
+
+*Ready to generate ZATCA-compliant invoices? [Download SwiftBill free](https://apps.apple.com/app/id6760855924) on the App Store and start invoicing in seconds.*
+
+---
+
+*Disclaimer: This article is for informational purposes only and does not constitute legal or tax advice. SwiftBill is not affiliated with or endorsed by ZATCA, the UAE FTA, or any government authority. Tax regulations change frequently — always consult a qualified tax professional. Last updated: March 2026.*
