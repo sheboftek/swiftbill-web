@@ -2,6 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+  <!-- ============================================================ -->
+  <!-- HOMEPAGES (priority 1.0, changefreq weekly)                  -->
+  <!-- ============================================================ -->
+
   <!-- English Homepage -->
   <url>
     <loc>https://getswiftbill.app/en/</loc>
@@ -54,13 +58,17 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- ============================================================ -->
+  <!-- COUNTRY PAGES (priority 0.9, changefreq weekly)              -->
+  <!-- ============================================================ -->
+
   <!-- English UAE Page -->
   <url>
     <loc>https://getswiftbill.app/en/uae/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/uae/" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/uae/" />
     <lastmod>2026-03-28</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
@@ -70,7 +78,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/uae/" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/uae/" />
     <lastmod>2026-03-28</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
@@ -80,7 +88,7 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/saudi/" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/saudi/" />
     <lastmod>2026-03-28</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
@@ -90,27 +98,480 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/saudi/" />
     <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/saudi/" />
     <lastmod>2026-03-28</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- French France Page -->
   <url>
     <loc>https://getswiftbill.app/fr/france/</loc>
-    <xhtml:link rel="alternate" hreflang="fr-FR" href="https://getswiftbill.app/fr/france/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/france/" />
     <lastmod>2026-03-28</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Italian Italy Page -->
   <url>
     <loc>https://getswiftbill.app/it/italy/</loc>
-    <xhtml:link rel="alternate" hreflang="it-IT" href="https://getswiftbill.app/it/italy/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/italy/" />
     <lastmod>2026-03-28</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- ============================================================ -->
+  <!-- BLOG INDEX PAGES (priority 0.8, changefreq weekly)           -->
+  <!-- ============================================================ -->
+
+  <!-- English Blog Index -->
+  <url>
+    <loc>https://getswiftbill.app/en/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Arabic Blog Index -->
+  <url>
+    <loc>https://getswiftbill.app/ar/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- French Blog Index -->
+  <url>
+    <loc>https://getswiftbill.app/fr/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Italian Blog Index -->
+  <url>
+    <loc>https://getswiftbill.app/it/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ============================================================ -->
+  <!-- ENGLISH BLOG POSTS (priority 0.7, changefreq monthly)        -->
+  <!-- ============================================================ -->
+
+  <!-- EN: Consultants Billing Guide — also FR + IT -->
+  <url>
+    <loc>https://getswiftbill.app/en/blog/consultants-billing-guide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/consultants-billing-guide/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/consultant-facturation/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/consulente-fatturazione/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN: Contractors Invoicing Guide — also AR -->
+  <url>
+    <loc>https://getswiftbill.app/en/blog/contractors-invoicing-guide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/contractors-invoicing-guide/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/contractor-invoicing/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN: Designers Invoice Tips — EN only -->
+  <url>
+    <loc>https://getswiftbill.app/en/blog/designers-invoice-tips/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN: Developers Freelance Invoicing — also AR + FR + IT -->
+  <url>
+    <loc>https://getswiftbill.app/en/blog/developers-freelance-invoicing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/developers-freelance-invoicing/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/freelancer-invoicing-guide/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/facturation-freelance-france/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/fatturazione-freelance-italia/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN: Expense Tracking Freelancers — also AR + FR + IT -->
+  <url>
+    <loc>https://getswiftbill.app/en/blog/expense-tracking-freelancers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/expense-tracking-freelancers/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/expense-tracking/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/suivi-depenses-freelance/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/gestione-spese-freelance/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN: Getting Started with Invoicing — also AR -->
+  <url>
+    <loc>https://getswiftbill.app/en/blog/getting-started-with-invoicing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/getting-started-with-invoicing/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/getting-started-with-invoicing/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN: Invoice App Freelancers — EN only -->
+  <url>
+    <loc>https://getswiftbill.app/en/blog/invoice-app-freelancers/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN: Invoice vs Estimate vs Quote — also AR + FR + IT -->
+  <url>
+    <loc>https://getswiftbill.app/en/blog/invoice-vs-estimate-vs-quote/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/invoice-vs-estimate-vs-quote/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/invoice-vs-estimate/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/devis-vs-facture/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/preventivo-vs-fattura/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN: Recurring Invoices Guide — also AR -->
+  <url>
+    <loc>https://getswiftbill.app/en/blog/recurring-invoices-guide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/recurring-invoices-guide/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/recurring-invoices/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN: Saudi Freelancer Tax Guide — also AR -->
+  <url>
+    <loc>https://getswiftbill.app/en/blog/saudi-freelancer-tax-guide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/saudi-freelancer-tax-guide/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/saudi-freelancer-tax/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN: SwiftBill v1.2 Release — EN only -->
+  <url>
+    <loc>https://getswiftbill.app/en/blog/swiftbill-v12-release/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN: UAE Freelancer VAT Guide — also AR -->
+  <url>
+    <loc>https://getswiftbill.app/en/blog/uae-freelancer-vat-guide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/uae-freelancer-vat-guide/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/uae-freelancer-vat/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN: UAE FTA Invoice Requirements — also AR -->
+  <url>
+    <loc>https://getswiftbill.app/en/blog/uae-fta-invoice-requirements/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/uae-fta-invoice-requirements/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/uae-fta-invoice-guide/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN: ZATCA Compliance Guide — EN only -->
+  <url>
+    <loc>https://getswiftbill.app/en/blog/zatca-compliance-guide/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- EN: ZATCA E-Invoicing Guide — also AR -->
+  <url>
+    <loc>https://getswiftbill.app/en/blog/zatca-e-invoicing-guide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/zatca-e-invoicing-guide/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/zatca-e-invoicing-guide/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ============================================================ -->
+  <!-- ARABIC BLOG POSTS (priority 0.7, changefreq monthly)         -->
+  <!-- ============================================================ -->
+
+  <!-- AR: Contractor Invoicing — also EN -->
+  <url>
+    <loc>https://getswiftbill.app/ar/blog/contractor-invoicing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/contractors-invoicing-guide/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/contractor-invoicing/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- AR: Expense Tracking — also EN + FR + IT -->
+  <url>
+    <loc>https://getswiftbill.app/ar/blog/expense-tracking/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/expense-tracking-freelancers/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/expense-tracking/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/suivi-depenses-freelance/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/gestione-spese-freelance/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- AR: Freelancer Invoicing Guide — also EN + FR + IT -->
+  <url>
+    <loc>https://getswiftbill.app/ar/blog/freelancer-invoicing-guide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/developers-freelance-invoicing/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/freelancer-invoicing-guide/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/facturation-freelance-france/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/fatturazione-freelance-italia/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- AR: Getting Started with Invoicing — also EN -->
+  <url>
+    <loc>https://getswiftbill.app/ar/blog/getting-started-with-invoicing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/getting-started-with-invoicing/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/getting-started-with-invoicing/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- AR: Invoice vs Estimate — also EN + FR + IT -->
+  <url>
+    <loc>https://getswiftbill.app/ar/blog/invoice-vs-estimate/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/invoice-vs-estimate-vs-quote/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/invoice-vs-estimate/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/devis-vs-facture/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/preventivo-vs-fattura/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- AR: Recurring Invoices — also EN -->
+  <url>
+    <loc>https://getswiftbill.app/ar/blog/recurring-invoices/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/recurring-invoices-guide/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/recurring-invoices/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- AR: Saudi Freelancer Tax — also EN -->
+  <url>
+    <loc>https://getswiftbill.app/ar/blog/saudi-freelancer-tax/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/saudi-freelancer-tax-guide/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/saudi-freelancer-tax/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- AR: UAE Freelancer VAT — also EN -->
+  <url>
+    <loc>https://getswiftbill.app/ar/blog/uae-freelancer-vat/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/uae-freelancer-vat-guide/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/uae-freelancer-vat/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- AR: UAE FTA Invoice Guide — also EN -->
+  <url>
+    <loc>https://getswiftbill.app/ar/blog/uae-fta-invoice-guide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/uae-fta-invoice-requirements/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/uae-fta-invoice-guide/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- AR: ZATCA E-Invoicing Guide — also EN -->
+  <url>
+    <loc>https://getswiftbill.app/ar/blog/zatca-e-invoicing-guide/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/zatca-e-invoicing-guide/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/zatca-e-invoicing-guide/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ============================================================ -->
+  <!-- FRENCH BLOG POSTS (priority 0.7, changefreq monthly)         -->
+  <!-- ============================================================ -->
+
+  <!-- FR: Consultant Facturation — also EN + IT -->
+  <url>
+    <loc>https://getswiftbill.app/fr/blog/consultant-facturation/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/consultants-billing-guide/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/consultant-facturation/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/consulente-fatturazione/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- FR: Devis vs Facture — also EN + AR + IT -->
+  <url>
+    <loc>https://getswiftbill.app/fr/blog/devis-vs-facture/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/invoice-vs-estimate-vs-quote/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/invoice-vs-estimate/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/devis-vs-facture/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/preventivo-vs-fattura/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- FR: Facturation Freelance France — also EN + AR + IT -->
+  <url>
+    <loc>https://getswiftbill.app/fr/blog/facturation-freelance-france/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/developers-freelance-invoicing/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/freelancer-invoicing-guide/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/facturation-freelance-france/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/fatturazione-freelance-italia/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- FR: Mentions Legales Facture — FR only -->
+  <url>
+    <loc>https://getswiftbill.app/fr/blog/mentions-legales-facture/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- FR: Suivi Depenses Freelance — also EN + AR + IT -->
+  <url>
+    <loc>https://getswiftbill.app/fr/blog/suivi-depenses-freelance/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/expense-tracking-freelancers/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/expense-tracking/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/suivi-depenses-freelance/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/gestione-spese-freelance/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- FR: TVA Auto-Entrepreneur — FR only -->
+  <url>
+    <loc>https://getswiftbill.app/fr/blog/tva-auto-entrepreneur/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ============================================================ -->
+  <!-- ITALIAN BLOG POSTS (priority 0.7, changefreq monthly)        -->
+  <!-- ============================================================ -->
+
+  <!-- IT: Consulente Fatturazione — also EN + FR -->
+  <url>
+    <loc>https://getswiftbill.app/it/blog/consulente-fatturazione/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/consultants-billing-guide/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/consultant-facturation/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/consulente-fatturazione/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- IT: Fatturazione Elettronica Italia — IT only -->
+  <url>
+    <loc>https://getswiftbill.app/it/blog/fatturazione-elettronica-italia/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- IT: Fatturazione Freelance Italia — also EN + AR + FR -->
+  <url>
+    <loc>https://getswiftbill.app/it/blog/fatturazione-freelance-italia/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/developers-freelance-invoicing/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/freelancer-invoicing-guide/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/facturation-freelance-france/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/fatturazione-freelance-italia/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- IT: Gestione Spese Freelance — also EN + AR + FR -->
+  <url>
+    <loc>https://getswiftbill.app/it/blog/gestione-spese-freelance/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/expense-tracking-freelancers/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/expense-tracking/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/suivi-depenses-freelance/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/gestione-spese-freelance/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- IT: Preventivo vs Fattura — also EN + AR + FR -->
+  <url>
+    <loc>https://getswiftbill.app/it/blog/preventivo-vs-fattura/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/invoice-vs-estimate-vs-quote/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/invoice-vs-estimate/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/devis-vs-facture/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/preventivo-vs-fattura/" />
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- IT: Regime Forfettario Fatturazione — IT only -->
+  <url>
+    <loc>https://getswiftbill.app/it/blog/regime-forfettario-fatturazione/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ============================================================ -->
+  <!-- LEGAL PAGES (priority 0.3, changefreq yearly)                -->
+  <!-- ============================================================ -->
 
   <!-- English Privacy Policy -->
   <url>
@@ -206,54 +667,6 @@
     <lastmod>2026-03-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-  </url>
-
-  <!-- English Blog -->
-  <url>
-    <loc>https://getswiftbill.app/en/blog/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/" />
-    <lastmod>2026-03-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Arabic Blog -->
-  <url>
-    <loc>https://getswiftbill.app/ar/blog/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/" />
-    <lastmod>2026-03-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- French Blog -->
-  <url>
-    <loc>https://getswiftbill.app/fr/blog/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/" />
-    <lastmod>2026-03-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Italian Blog -->
-  <url>
-    <loc>https://getswiftbill.app/it/blog/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://getswiftbill.app/en/blog/" />
-    <xhtml:link rel="alternate" hreflang="ar" href="https://getswiftbill.app/ar/blog/" />
-    <xhtml:link rel="alternate" hreflang="fr" href="https://getswiftbill.app/fr/blog/" />
-    <xhtml:link rel="alternate" hreflang="it" href="https://getswiftbill.app/it/blog/" />
-    <lastmod>2026-03-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
   </url>
 
 </urlset>
