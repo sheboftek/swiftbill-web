@@ -4,28 +4,67 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { type Lang, t, getLocalizedPath } from "@/i18n/utils";
+import { type Lang, t, getLocalizedPath, languages } from "@/i18n/utils";
 
 const APP_STORE_URL = "https://apps.apple.com/app/id6760855924";
 
 /* Onramper easing */
 const EASE_ONRAMPER: [number, number, number, number] = [0.86, 0, 0.07, 1];
 
-/** Extract country slug from pathname (e.g., /en/saudi → "saudi", /en → null) */
+/** Extract country slug from pathname (e.g., /en/saudi -> "saudi", /en -> null) */
 function getCountryFromPath(pathname: string): string | null {
   const segments = pathname.split("/").filter(Boolean);
   // segments[0] = lang, segments[1] = country or page
   if (segments.length >= 2) {
     const second = segments[1];
-    if (second === "uae" || second === "saudi") return second;
+    if (second === "uae" || second === "saudi" || second === "france" || second === "italy") return second;
   }
   return null;
 }
 
+/** Map language to its preferred country slug (for preserving country context) */
+function getCountryForLang(lang: Lang, currentCountry: string | null): string | null {
+  // If switching to fr and currently not on a country page, suggest france
+  // If switching to it, suggest italy
+  // Otherwise preserve current country if it makes sense for the target lang
+  if (!currentCountry) return null;
+
+  // Gulf countries only make sense for en/ar
+  if ((currentCountry === "uae" || currentCountry === "saudi") && (lang === "fr" || lang === "it")) {
+    return null;
+  }
+  // France only makes sense for fr
+  if (currentCountry === "france" && lang !== "fr") {
+    return null;
+  }
+  // Italy only makes sense for it
+  if (currentCountry === "italy" && lang !== "it") {
+    return null;
+  }
+
+  return currentCountry;
+}
+
+const langLabels: Record<Lang, string> = {
+  en: "EN",
+  ar: "AR",
+  fr: "FR",
+  it: "IT",
+};
+
+const langNames: Record<Lang, string> = {
+  en: "English",
+  ar: "\u0627\u0644\u0639\u0631\u0628\u064A\u0629",
+  fr: "Fran\u00e7ais",
+  it: "Italiano",
+};
+
 export function Header({ lang }: { lang: Lang }) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
+  const langDropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const dir = lang === "ar" ? "rtl" : "ltr";
 
@@ -38,6 +77,19 @@ export function Header({ lang }: { lang: Lang }) {
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  /* Close language dropdown on outside click */
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (langDropdownRef.current && !langDropdownRef.current.contains(e.target as Node)) {
+        setLangDropdownOpen(false);
+      }
+    }
+    if (langDropdownOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [langDropdownOpen]);
 
   /* Lock body scroll when mobile menu is open */
   useEffect(() => {
@@ -57,11 +109,14 @@ export function Header({ lang }: { lang: Lang }) {
     { label: t(lang, "nav.blog"), href: getLocalizedPath(lang, "/blog") },
   ];
 
-  const altLang = lang === "en" ? "ar" : "en";
-  const altLabel = lang === "en" ? "AR" : "EN";
-  const altLangHref = currentCountry
-    ? `/${altLang}/${currentCountry}/`
-    : getLocalizedPath(altLang);
+  function getLangHref(targetLang: Lang): string {
+    const country = getCountryForLang(targetLang, currentCountry);
+    return country
+      ? `/${targetLang}/${country}/`
+      : getLocalizedPath(targetLang);
+  }
+
+  const allLangs = Object.keys(languages) as Lang[];
 
   return (
     <header
@@ -75,7 +130,7 @@ export function Header({ lang }: { lang: Lang }) {
         className="mx-auto flex max-w-[1440px] items-center justify-between"
         style={{ paddingTop: 24, paddingInlineStart: 24, paddingInlineEnd: 24 }}
       >
-        {/* ─── Logo Pill ─── */}
+        {/* --- Logo Pill --- */}
         <Link
           href={getLocalizedPath(lang)}
           className="flex items-center justify-center gap-2.5"
@@ -105,7 +160,7 @@ export function Header({ lang }: { lang: Lang }) {
           </span>
         </Link>
 
-        {/* ─── Desktop Nav Pill ─── */}
+        {/* --- Desktop Nav Pill --- */}
         <nav
           className="hidden items-center md:flex"
           style={{
@@ -145,21 +200,94 @@ export function Header({ lang }: { lang: Lang }) {
           ))}
         </nav>
 
-        {/* ─── Desktop Right Actions ─── */}
+        {/* --- Desktop Right Actions --- */}
         <div className="hidden items-center gap-3 md:flex">
-          {/* Language toggle — secondary button style */}
-          <Link
-            href={altLangHref}
-            className="button secondary"
-            style={{
-              padding: "10px 20px",
-              fontSize: 16,
-            }}
-          >
-            {altLabel}
-          </Link>
+          {/* Language dropdown */}
+          <div ref={langDropdownRef} className="relative">
+            <button
+              onClick={() => setLangDropdownOpen((prev) => !prev)}
+              className="button secondary flex items-center gap-1.5"
+              style={{
+                padding: "10px 20px",
+                fontSize: 16,
+                cursor: "pointer",
+              }}
+              aria-label="Select language"
+              aria-expanded={langDropdownOpen}
+            >
+              {langLabels[lang]}
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                style={{
+                  transform: langDropdownOpen ? "rotate(180deg)" : "rotate(0deg)",
+                  transition: "transform 0.25s ease",
+                }}
+                aria-hidden="true"
+              >
+                <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
 
-          {/* Download — primary button (Onramper "Get Started" equivalent) */}
+            <AnimatePresence>
+              {langDropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.2, ease: EASE_ONRAMPER }}
+                  style={{
+                    position: "absolute",
+                    top: "calc(100% + 8px)",
+                    insetInlineEnd: 0,
+                    minWidth: 160,
+                    backgroundColor: "#ffffff",
+                    borderRadius: 14,
+                    boxShadow: "0 8px 30px rgba(0,0,0,0.12)",
+                    overflow: "hidden",
+                    zIndex: 50,
+                  }}
+                >
+                  {allLangs.map((l) => (
+                    <Link
+                      key={l}
+                      href={getLangHref(l)}
+                      onClick={() => setLangDropdownOpen(false)}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        padding: "12px 18px",
+                        fontSize: 15,
+                        fontWeight: 500,
+                        color: l === lang ? "#3053EC" : "#151515",
+                        backgroundColor: l === lang ? "rgba(48,83,236,0.06)" : "transparent",
+                        textDecoration: "none",
+                        transition: "background-color 0.2s ease",
+                      }}
+                      onMouseEnter={(e) => {
+                        if (l !== lang) (e.currentTarget as HTMLElement).style.backgroundColor = "rgba(0,0,0,0.04)";
+                      }}
+                      onMouseLeave={(e) => {
+                        if (l !== lang) (e.currentTarget as HTMLElement).style.backgroundColor = "transparent";
+                      }}
+                    >
+                      <span>{langNames[l]}</span>
+                      {l === lang && (
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                          <path d="M3 7L6 10L11 4" stroke="#3053EC" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      )}
+                    </Link>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* Download -- primary button (Onramper "Get Started" equivalent) */}
           <motion.a
             href={APP_STORE_URL}
             target="_blank"
@@ -187,7 +315,7 @@ export function Header({ lang }: { lang: Lang }) {
           </motion.a>
         </div>
 
-        {/* ─── Mobile Hamburger ─── */}
+        {/* --- Mobile Hamburger --- */}
         <motion.button
           className="relative z-50 flex h-11 w-11 flex-col items-center justify-center gap-1.5 md:hidden"
           style={{
@@ -225,7 +353,7 @@ export function Header({ lang }: { lang: Lang }) {
         </motion.button>
       </div>
 
-      {/* ─── Mobile Menu Full-Screen Overlay ─── */}
+      {/* --- Mobile Menu Full-Screen Overlay --- */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -278,36 +406,41 @@ export function Header({ lang }: { lang: Lang }) {
                 </motion.div>
               ))}
 
-              {/* Language link in mobile */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                transition={{
-                  delay: 0.1 + navLinks.length * 0.08,
-                  duration: 0.4,
-                  ease: EASE_ONRAMPER,
-                }}
-              >
-                <Link
-                  href={altLangHref}
-                  onClick={() => setMobileOpen(false)}
-                  className="block font-heading"
-                  style={{
-                    color: "#151515",
-                    fontSize: 42,
-                    fontWeight: 500,
-                    letterSpacing: "-0.42px",
-                    lineHeight: "110%",
-                    paddingTop: 16,
-                    paddingBottom: 16,
-                    opacity: 0.5,
-                    textDecoration: "none",
-                  }}
-                >
-                  {altLang === "ar" ? "العربية" : "English"}
-                </Link>
-              </motion.div>
+              {/* Language options in mobile */}
+              {allLangs
+                .filter((l) => l !== lang)
+                .map((l, idx) => (
+                  <motion.div
+                    key={l}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{
+                      delay: 0.1 + (navLinks.length + idx) * 0.08,
+                      duration: 0.4,
+                      ease: EASE_ONRAMPER,
+                    }}
+                  >
+                    <Link
+                      href={getLangHref(l)}
+                      onClick={() => setMobileOpen(false)}
+                      className="block font-heading"
+                      style={{
+                        color: "#151515",
+                        fontSize: 42,
+                        fontWeight: 500,
+                        letterSpacing: "-0.42px",
+                        lineHeight: "110%",
+                        paddingTop: 16,
+                        paddingBottom: 16,
+                        opacity: 0.5,
+                        textDecoration: "none",
+                      }}
+                    >
+                      {langNames[l]}
+                    </Link>
+                  </motion.div>
+                ))}
             </nav>
 
             {/* Bottom CTA */}
@@ -316,7 +449,7 @@ export function Header({ lang }: { lang: Lang }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
               transition={{
-                delay: 0.1 + (navLinks.length + 1) * 0.08,
+                delay: 0.1 + (navLinks.length + allLangs.length) * 0.08,
                 duration: 0.4,
                 ease: EASE_ONRAMPER,
               }}

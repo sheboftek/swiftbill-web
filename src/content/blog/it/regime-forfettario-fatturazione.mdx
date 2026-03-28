@@ -1,0 +1,231 @@
+---
+title: "Regime forfettario e fatturazione: guida pratica per freelance"
+description: "Come fatturare correttamente in regime forfettario: imposta sostitutiva, coefficiente di redditivita, rivalsa INPS, bollo, limiti di fatturato e diciture obbligatorie."
+date: "2026-03-28"
+category: "tax"
+locale: "it"
+author: "SwiftBill"
+---
+
+*Avvertenza: Questo articolo e fornito a solo scopo informativo e non costituisce consulenza fiscale o legale. SwiftBill non e affiliato all'Agenzia delle Entrate. Le normative fiscali cambiano frequentemente -- consulta sempre un professionista qualificato. Ultimo aggiornamento: marzo 2026.*
+
+---
+
+Il regime forfettario e il regime fiscale piu utilizzato dai freelance in Italia. Offre una tassazione agevolata, una contabilita semplificata e nessun obbligo di addebitare l'IVA. Ma proprio perche e "semplificato", molti freelance commettono errori nella fatturazione, nella gestione del bollo, o nella valutazione della convenienza rispetto al regime ordinario.
+
+Questa guida analizza nel dettaglio ogni aspetto della fatturazione in regime forfettario.
+
+## Chi puo accedere al regime forfettario nel 2026
+
+### Requisiti di accesso
+
+Per accedere (o restare) nel regime forfettario nel 2026, devi rispettare tutti i seguenti requisiti:
+
+**Limite di ricavi/compensi**: il fatturato dell'anno precedente non deve superare **85.000 euro**. Attenzione: si tratta dei compensi percepiti (incassati), non fatturati.
+
+**Limite spese per lavoro dipendente/collaboratori**: le spese sostenute per dipendenti e collaboratori non devono superare **20.000 euro** lordi annui.
+
+**Nessuna partecipazione in societa di persone, associazioni professionali o SRL trasparenti** (nello stesso anno o nell'anno precedente).
+
+**Non rientrare nelle cause di esclusione**: non puoi aderire se il tuo reddito da lavoro dipendente dell'anno precedente supera 30.000 euro (salvo se il rapporto e cessato).
+
+### Cosa succede se superi gli 85.000 euro
+
+**Superamento fino a 100.000 euro**: resti in forfettario per l'anno in corso, ma dal 1 gennaio dell'anno successivo passi al regime ordinario.
+
+**Superamento di 100.000 euro**: esci immediatamente dal forfettario. Dalla fattura che determina il superamento, devi applicare l'IVA e le regole del regime ordinario. Le fatture precedenti dell'anno restano valide senza IVA.
+
+Questo e un punto critico: se a novembre hai gia fatturato 98.000 euro e stai per chiudere un progetto da 5.000 euro, il superamento dei 100.000 euro ti farebbe uscire immediatamente. In questi casi, e fondamentale monitorare il fatturato in tempo reale.
+
+## L'imposta sostitutiva: 5% o 15%
+
+Il vantaggio fiscale principale del forfettario e l'imposta sostitutiva unica, che sostituisce IRPEF, addizionali regionali e comunali, e IRAP.
+
+### Aliquota al 15%
+
+E l'aliquota standard. Si applica al reddito imponibile (compensi incassati moltiplicati per il coefficiente di redditivita).
+
+### Aliquota ridotta al 5% per i primi 5 anni
+
+Puoi beneficiare dell'aliquota ridotta al 5% per i primi 5 anni di attivita se:
+- Non hai esercitato nei 3 anni precedenti un'attivita d'impresa, arte o professione (anche in forma associata o familiare)
+- L'attivita non e una mera prosecuzione di un'attivita precedentemente svolta come lavoratore dipendente o autonomo (salvo il caso di pratica obbligatoria)
+- Se rilevi un'attivita, il fatturato dell'anno precedente del cedente non supera 85.000 euro
+
+L'agevolazione al 5% e particolarmente vantaggiosa: su un reddito imponibile di 30.000 euro, paghi 1.500 euro di imposta (5%) anziche 4.500 euro (15%).
+
+## Il coefficiente di redditivita
+
+Il regime forfettario non consente di dedurre i costi reali. Il reddito imponibile viene calcolato applicando un **coefficiente di redditivita** forfettario al fatturato lordo. Il coefficiente varia in base al codice ATECO.
+
+### Coefficienti per attivita comuni dei freelance
+
+| Codice ATECO | Attivita | Coefficiente |
+|-------------|----------|-------------|
+| 62.01, 62.02, 62.03, 62.09 | Informatica e sviluppo software | 67% |
+| 69.10, 69.20 | Attivita legali e contabili | 78% |
+| 70.22 | Consulenza gestionale | 78% |
+| 73.11 | Agenzie pubblicitarie | 78% |
+| 74.10 | Design e grafica | 78% |
+| 74.90 | Altre attivita professionali | 78% |
+| 85.59 | Formazione e istruzione | 78% |
+| 47.xx | Commercio al dettaglio | 40% |
+| 41-43 | Costruzioni | 86% |
+| 56.xx | Ristorazione | 40% |
+
+### Come si calcola il reddito imponibile
+
+**Fatturato incassato** x **Coefficiente di redditivita** = **Reddito imponibile**
+
+Esempio per un consulente informatico (codice 62.02, coefficiente 67%):
+
+| Voce | Importo |
+|------|---------|
+| Compensi incassati nel 2026 | 60.000 euro |
+| Coefficiente di redditivita | 67% |
+| Reddito imponibile lordo | 40.200 euro |
+| - Contributi previdenziali versati | -9.600 euro |
+| **Reddito imponibile netto** | **30.600 euro** |
+| Imposta sostitutiva (15%) | 4.590 euro |
+
+Il reddito imponibile si riduce ulteriormente sottraendo i contributi previdenziali effettivamente versati nell'anno (unica deduzione ammessa nel forfettario).
+
+## Come fatturare in regime forfettario: passo per passo
+
+### Struttura della fattura
+
+La fattura di un forfettario contiene:
+
+1. **Dati dell'emittente**: nome, cognome, indirizzo, partita IVA, codice fiscale, regime fiscale (RF19 nel tracciato XML)
+2. **Dati del committente**: denominazione, indirizzo, P.IVA o CF, codice SDI o PEC
+3. **Numero e data** della fattura
+4. **Descrizione** della prestazione o del bene
+5. **Importo** della prestazione
+6. **Rivalsa INPS 4%** (se applicabile)
+7. **Totale**
+8. **Dicitura di esenzione IVA**
+9. **Imposta di bollo** (se l'importo supera 77,47 euro)
+
+### Le diciture obbligatorie
+
+La fattura deve contenere la seguente dicitura:
+
+> **"Operazione effettuata ai sensi dell'articolo 1, commi da 54 a 89, della Legge n. 190/2014, come modificata dalla Legge n. 208/2015 e dalla Legge n. 145/2018. Si richiede la non applicazione della ritenuta alla fonte a titolo d'acconto ai sensi dell'art. 1, comma 67, della Legge n. 190/2014."**
+
+Questa dicitura fa due cose:
+- Spiega perche non c'e IVA (riferimento normativo al regime forfettario)
+- Chiede al cliente di non applicare la ritenuta d'acconto del 20% (che non si applica ai forfettari)
+
+### Rivalsa INPS del 4%
+
+Se sei iscritto alla Gestione Separata INPS (freelance senza albo professionale), puoi addebitare al cliente una rivalsa del 4% sull'imponibile. Questa rivalsa:
+- **Non e obbligatoria**, ma e fortemente consigliata
+- E una parte del tuo compenso, non un'aggiunta a carico del cliente
+- Concorre a formare il tuo reddito imponibile
+- Si calcola sull'importo della prestazione (non sul totale fattura)
+
+Se sei iscritto a una cassa professionale (INARCASSA, Cassa Forense, ENPAM...), la rivalsa e quella prevista dalla tua cassa (generalmente il 2% o il 4%), con regole specifiche.
+
+### Imposta di bollo di 2 euro
+
+Le fatture esenti da IVA con importo superiore a **77,47 euro** richiedono l'applicazione dell'imposta di bollo di 2 euro.
+
+Per le fatture elettroniche, il bollo e virtuale. Nel tracciato XML:
+- Imposta il campo "DatiBollo/BolloVirtuale" su "SI"
+- Indica l'importo del bollo: 2,00 euro
+
+Il bollo puo essere:
+- **A carico dell'emittente**: non lo addebiti al cliente, e un costo tuo
+- **Addebitato al cliente**: lo aggiungi come voce separata in fattura (prassi comune)
+
+Se lo addebiti al cliente, il bollo concorre a formare il tuo compenso ai fini del reddito imponibile.
+
+### Esempio completo di fattura forfettaria
+
+| N. | Descrizione | Importo |
+|----|-------------|---------|
+| 1 | Sviluppo sito web aziendale - progettazione, sviluppo front-end e back-end, test e rilascio | 3.000,00 euro |
+| | Rivalsa INPS 4% | 120,00 euro |
+| | Imposta di bollo | 2,00 euro |
+| | **Totale documento** | **3.122,00 euro** |
+
+Dicitura: "Operazione effettuata ai sensi dell'art. 1, commi 54-89, L. 190/2014. Si richiede la non applicazione della ritenuta alla fonte a titolo d'acconto ai sensi dell'art. 1, comma 67, L. 190/2014."
+
+Natura IVA: N2.2 (non soggetta - altri casi)
+
+## Confronto: forfettario vs ordinario
+
+### Quando il forfettario conviene
+
+Il forfettario conviene quando:
+- I tuoi costi reali sono inferiori a quanto previsto dal coefficiente di redditivita (ad esempio, se il tuo coefficiente e del 78% ma le tue spese reali sono solo il 10% del fatturato)
+- Lavori prevalentemente con clienti privati (il prezzo senza IVA e piu competitivo)
+- Vuoi la massima semplicita contabile
+- Il tuo fatturato e sotto gli 85.000 euro
+
+### Quando l'ordinario conviene
+
+L'ordinario puo convenire quando:
+- Hai costi elevati (attrezzature, collaboratori, affitto studio, materiali)
+- Il coefficiente di redditivita e alto (78-86%) ma le tue spese reali superano il 22-14% residuo
+- Lavori prevalentemente con aziende (l'IVA e neutra per loro)
+- Vuoi detrarre l'IVA sugli investimenti importanti (auto, ristrutturazione studio, attrezzature costose)
+
+### Esempio di confronto numerico
+
+**Freelance designer, fatturato 50.000 euro, costi reali 12.000 euro**
+
+| Voce | Forfettario | Ordinario |
+|------|-------------|-----------|
+| Fatturato | 50.000 euro | 50.000 euro |
+| Reddito imponibile | 39.000 euro (78%) | 38.000 euro (50.000-12.000) |
+| Contributi INPS (circa 26%) | -10.140 euro | -9.880 euro |
+| Imponibile netto | 28.860 euro | 28.120 euro |
+| Imposta | 4.329 euro (15%) | ~6.460 euro (IRPEF scaglioni) |
+| **Carico fiscale totale** | **14.469 euro** | **16.340 euro** |
+
+In questo caso, il forfettario fa risparmiare quasi 2.000 euro all'anno. Ma se i costi reali fossero 25.000 euro (attrezzature, collaboratori), l'ordinario diventerebbe piu vantaggioso grazie alla deduzione integrale dei costi.
+
+## Errori comuni nel forfettario
+
+### Non inserire la dicitura di esenzione
+
+Ogni fattura deve riportare il riferimento normativo al regime forfettario. L'assenza della dicitura puo creare confusione col cliente (che potrebbe applicare la ritenuta) e con l'Agenzia delle Entrate.
+
+### Dimenticare il bollo
+
+L'omissione del bollo sulle fatture sopra 77,47 euro e sanzionata. La sanzione e pari al doppio o al quintuplo dell'imposta evasa. Su 2 euro di bollo, la sanzione minima e di 4 euro per fattura -- che su 100 fatture annue diventa significativa.
+
+### Non monitorare il fatturato
+
+Superare i 100.000 euro comporta l'uscita immediata dal forfettario con obbligo di addebitare l'IVA dalla fattura di superamento. Tieni sotto controllo il tuo fatturato cumulativo durante l'anno. SwiftBill ti consente di visualizzare il tuo fatturato cumulato tramite i report integrati, aiutandoti a prevenire superamenti imprevisti.
+
+### Confondere compensi percepiti e fatturati
+
+Nel forfettario si applica il principio di cassa: conta il momento dell'incasso, non della fatturazione. Una fattura emessa a dicembre 2026 ma incassata a gennaio 2027 rientra nel fatturato 2027.
+
+### Non versare il bollo trimestralmente
+
+I bolli virtuali si versano trimestralmente tramite F24, con le scadenze indicate dall'Agenzia delle Entrate. Il mancato versamento comporta sanzioni e interessi.
+
+## Domande frequenti
+
+### Posso emettere fattura a un cliente estero in regime forfettario?
+
+Si. Per i clienti UE con partita IVA, emetti fattura senza IVA (come di consueto nel forfettario). Per i clienti extra-UE, il principio e lo stesso. Ricorda che dal 2022 devi trasmettere anche le fatture verso l'estero tramite SDI (con codice destinatario XXXXXXX - sette X).
+
+### La rivalsa INPS va inserita anche nelle fatture verso l'estero?
+
+La rivalsa INPS e una facolta, non un obbligo. Puoi inserirla anche nelle fatture verso l'estero. Tuttavia, per clienti non italiani che non conoscono il sistema previdenziale italiano, potresti preferire inglobare la rivalsa nel compenso principale per semplicita.
+
+### Posso passare dal forfettario all'ordinario e viceversa?
+
+Si. Puoi uscire volontariamente dal forfettario optando per il regime ordinario dal 1 gennaio dell'anno successivo (comunicazione con la dichiarazione IVA). Per rientrare nel forfettario, devi aver rispettato i requisiti nell'anno precedente e non aver optato per il regime ordinario da meno di 3 anni (vincolo triennale dell'opzione).
+
+### Come gestisco un acconto o un anticipo?
+
+Emetti una fattura di acconto (TD02 nel tracciato XML) al momento dell'incasso. Alla conclusione del progetto, emetti la fattura di saldo indicando l'acconto gia fatturato e il residuo dovuto.
+
+---
+
+*Fattura in regime forfettario senza errori. [Scarica SwiftBill gratis](https://apps.apple.com/app/id6760855924) dall'App Store.*

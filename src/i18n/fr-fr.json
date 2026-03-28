@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "title": "SwiftBill — Application de facturation professionnelle pour la France",
+    "description": "Creez des factures conformes aux normes francaises avec TVA, mentions legales obligatoires et 15 modeles PDF. L'application de facturation #1 pour les freelances en France.",
+    "ogTitle": "SwiftBill — Facturation professionnelle pour la France"
+  },
+  "hero": {
+    "badge": "Concu pour la France",
+    "title": "Factures professionnelles",
+    "titleHighlight": "en quelques secondes.",
+    "subtitle": "Creez des factures conformes avec mentions legales obligatoires, calcul automatique de la TVA et modeles professionnels. Concu pour les freelances, auto-entrepreneurs et PME en France."
+  },
+  "features": {
+    "subtitle": "Que vous soyez freelance a Paris, auto-entrepreneur a Lyon ou consultant a Marseille — SwiftBill gere vos factures, devis, notes de frais et conformite pour que vous vous concentriez sur votre travail."
+  }
+}

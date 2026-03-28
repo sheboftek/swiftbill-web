@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import { type Lang, t, getLocalizedPath } from "@/i18n/utils";
+import { type Lang, t, getLocalizedPath, languages } from "@/i18n/utils";
 
 const APP_STORE_URL = "https://apps.apple.com/app/id6760855924";
 
@@ -97,9 +97,27 @@ export function Footer({ lang }: { lang: Lang }) {
 
   // Detect country from current URL to preserve when switching languages
   const segments = pathname.split("/").filter(Boolean);
-  const currentCountry = segments.length >= 2 && (segments[1] === "uae" || segments[1] === "saudi") ? segments[1] : null;
-  const altLang = lang === "en" ? "ar" : "en";
-  const altLangHref = currentCountry ? `/${altLang}/${currentCountry}/` : getLocalizedPath(altLang);
+  const countrySlugs = ["uae", "saudi", "france", "italy"];
+  const currentCountry = segments.length >= 2 && countrySlugs.includes(segments[1]) ? segments[1] : null;
+
+  const langNames: Record<Lang, string> = {
+    en: "English",
+    ar: "\u0627\u0644\u0639\u0631\u0628\u064A\u0629",
+    fr: "Fran\u00e7ais",
+    it: "Italiano",
+  };
+
+  const allLangs = Object.keys(languages) as Lang[];
+
+  function getLangHref(targetLang: Lang): string {
+    // Gulf countries only make sense for en/ar
+    if (currentCountry && (currentCountry === "uae" || currentCountry === "saudi") && (targetLang === "fr" || targetLang === "it")) {
+      return getLocalizedPath(targetLang);
+    }
+    if (currentCountry === "france" && targetLang !== "fr") return getLocalizedPath(targetLang);
+    if (currentCountry === "italy" && targetLang !== "it") return getLocalizedPath(targetLang);
+    return currentCountry ? `/${targetLang}/${currentCountry}/` : getLocalizedPath(targetLang);
+  }
 
   const columns = [
     {
@@ -273,20 +291,27 @@ export function Footer({ lang }: { lang: Lang }) {
             &copy; {year} {t(lang, "footer.copyright")}
           </span>
 
-          <Link
-            href={altLangHref}
-            style={{
-              fontSize: 16,
-              fontWeight: 500,
-              color: "#808099",
-              textDecoration: "none",
-              transition: "color 0.35s cubic-bezier(0.86, 0, 0.07, 1)",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#3053EC")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#808099")}
-          >
-            {lang === "en" ? "\u0627\u0644\u0639\u0631\u0628\u064A\u0629" : "English"}
-          </Link>
+          <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+            {allLangs
+              .filter((l) => l !== lang)
+              .map((l) => (
+                <Link
+                  key={l}
+                  href={getLangHref(l)}
+                  style={{
+                    fontSize: 16,
+                    fontWeight: 500,
+                    color: "#808099",
+                    textDecoration: "none",
+                    transition: "color 0.35s cubic-bezier(0.86, 0, 0.07, 1)",
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#3053EC")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "#808099")}
+                >
+                  {langNames[l]}
+                </Link>
+              ))}
+          </div>
         </div>
       </div>
 

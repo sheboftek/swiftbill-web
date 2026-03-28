@@ -1,0 +1,230 @@
+---
+title: "Fatturazione elettronica in Italia: tutto quello che devi sapere nel 2026"
+description: "Guida completa alla fatturazione elettronica in Italia: come funziona il Sistema di Interscambio (SDI), il formato XML, i codici tipo documento, le scadenze e gli strumenti per gestirla."
+date: "2026-03-28"
+category: "tax"
+locale: "it"
+author: "SwiftBill"
+---
+
+*Avvertenza: Questo articolo e fornito a solo scopo informativo e non costituisce consulenza fiscale o legale. SwiftBill non e affiliato all'Agenzia delle Entrate. Le normative fiscali cambiano frequentemente -- consulta sempre un professionista qualificato. Ultimo aggiornamento: marzo 2026.*
+
+---
+
+L'Italia e stata tra i primi Paesi in Europa a rendere obbligatoria la fatturazione elettronica tra privati. Dal 2019 per le aziende e i professionisti in regime ordinario, e dal 2024 anche per i forfettari senza eccezioni. Il sistema e ormai consolidato, ma le domande restano tante, soprattutto per chi apre partita IVA per la prima volta o per chi ha operato finora con esenzioni.
+
+Questa guida spiega nel dettaglio come funziona la fattura elettronica in Italia, cosa cambia nel 2026, e come gestire il processo senza impazzire.
+
+## Cos'e la fattura elettronica
+
+La fattura elettronica non e un PDF inviato via email. E un file in formato **XML** strutturato secondo le specifiche tecniche dell'Agenzia delle Entrate, trasmesso attraverso il **Sistema di Interscambio (SDI)**. Solo le fatture che transitano per lo SDI hanno valore fiscale.
+
+### Il formato XML
+
+Il formato si chiama **FatturaPA** (per le fatture verso la Pubblica Amministrazione) o **FatturaB2B** (per le fatture tra privati). Il tracciato XML contiene tutte le informazioni della fattura in campi codificati:
+
+- Dati dell'emittente (cedente/prestatore)
+- Dati del destinatario (cessionario/committente)
+- Dati generali del documento (tipo, numero, data)
+- Dettaglio delle linee (descrizione, quantita, prezzo, IVA)
+- Dati di pagamento (modalita, scadenza, IBAN)
+- Eventuali allegati (ad esempio, la versione PDF di cortesia)
+
+Non devi scrivere l'XML a mano. Il tuo software di fatturazione genera il file XML automaticamente a partire dai dati che inserisci.
+
+### Factur-X e formati europei
+
+Con la diffusione della fatturazione elettronica in Europa, si stanno affermando formati interoperabili come **Factur-X** (PDF ibrido con XML integrato) e **Peppol BIS**. L'Italia riconosce il formato FatturaPA/B2B per il mercato interno, ma per le transazioni transfrontaliere i formati europei stanno acquisendo rilevanza.
+
+## Come funziona il Sistema di Interscambio (SDI)
+
+Lo SDI e il nodo centrale della fatturazione elettronica italiana. Gestito dall'Agenzia delle Entrate, funziona come un "postino digitale" che riceve, controlla e recapita le fatture.
+
+### Il flusso completo
+
+**Passo 1 -- Creazione della fattura**
+Crei la fattura nel tuo software. Il software genera il file XML conforme alle specifiche.
+
+**Passo 2 -- Trasmissione allo SDI**
+Il file XML viene inviato allo SDI. Puoi trasmetterlo tramite:
+- Il portale web "Fatture e Corrispettivi" dell'Agenzia delle Entrate (gratuito)
+- Un software di fatturazione certificato (che si collega allo SDI via web service)
+- PEC (posta elettronica certificata)
+- Un intermediario (commercialista, provider di servizi)
+
+**Passo 3 -- Controlli dello SDI**
+Lo SDI effettua controlli formali sul file:
+- Validita della partita IVA dell'emittente e del destinatario
+- Correttezza del formato XML
+- Coerenza dei dati (importi, aliquote IVA, codici)
+- Unicita del documento (numero fattura non gia trasmesso)
+
+Se il file supera i controlli, lo SDI lo accetta. Altrimenti, lo **scarta** e invia una notifica di scarto con il codice errore. Hai **5 giorni** per correggere e ritrasmettere.
+
+**Passo 4 -- Recapito al destinatario**
+Lo SDI recapita la fattura al destinatario tramite:
+- **Codice destinatario**: un codice di 7 caratteri alfanumerici che identifica il software/canale di ricezione del cliente
+- **PEC**: se il cliente ha indicato la PEC come canale di ricezione
+- **Cassetto fiscale**: se lo SDI non riesce a recapitare la fattura (codice destinatario sconosciuto, PEC piena), la deposita nel cassetto fiscale del destinatario
+
+**Passo 5 -- Notifiche**
+Lo SDI invia all'emittente una notifica per ogni stato:
+- **Ricevuta di consegna (RC)**: la fattura e stata recapitata al destinatario
+- **Notifica di mancato recapito (MC)**: lo SDI non e riuscito a recapitare, la fattura e nel cassetto fiscale
+- **Notifica di scarto (NS)**: la fattura contiene errori e deve essere corretta
+
+## I codici tipo documento
+
+Ogni fattura elettronica ha un codice "TipoDocumento" che ne identifica la natura:
+
+| Codice | Descrizione |
+|--------|-------------|
+| **TD01** | Fattura |
+| **TD02** | Acconto/anticipo su fattura |
+| **TD03** | Acconto/anticipo su parcella |
+| **TD04** | Nota di credito |
+| **TD05** | Nota di debito |
+| **TD06** | Parcella (professionisti con albo) |
+| **TD07** | Fattura semplificata |
+| **TD08** | Nota di credito semplificata |
+| **TD16** | Integrazione fattura reverse charge interno |
+| **TD17** | Integrazione/autofattura acquisto servizi dall'estero |
+| **TD18** | Integrazione acquisto beni intracomunitari |
+| **TD19** | Integrazione/autofattura acquisto beni ex art. 17 c.2 |
+| **TD24** | Fattura differita |
+| **TD25** | Fattura differita art. 21 c.4 terzo periodo |
+| **TD26** | Cessione di beni ammortizzabili |
+| **TD27** | Fattura per autoconsumo o cessioni gratuite |
+
+Per un freelance, i codici piu utilizzati sono **TD01** (fattura standard), **TD04** (nota di credito) e **TD06** (parcella per i professionisti iscritti a un albo).
+
+## I codici natura IVA per i forfettari
+
+Se sei in regime forfettario, non addebiti IVA. Nel tracciato XML, devi indicare il codice natura che giustifica l'assenza di IVA:
+
+| Codice | Descrizione | Uso |
+|--------|-------------|-----|
+| **N2.2** | Non soggette - altri casi | Forfettari (il piu comune) |
+| **N1** | Escluse ex art. 15 | Rimborsi anticipazioni |
+| **N3** | Non imponibili | Esportazioni, cessioni intracomunitarie |
+| **N4** | Esenti | Operazioni esenti art. 10 |
+| **N5** | Regime del margine | Beni usati |
+| **N6** | Inversione contabile (reverse charge) | Subappalti edili, servizi di pulizia, etc. |
+
+Per i forfettari, il codice corretto e generalmente **N2.2**.
+
+## L'imposta di bollo sulle fatture elettroniche
+
+Le fatture esenti da IVA (come quelle dei forfettari) di importo superiore a **77,47 euro** sono soggette all'imposta di bollo di **2 euro**.
+
+### Come si applica
+
+Nel tracciato XML, imposti il campo "DatiBollo" a "SI" e indichi l'importo di 2,00 euro. Il bollo non viene fisicamente apposto: e un bollo virtuale.
+
+### Come si versa
+
+L'Agenzia delle Entrate calcola trimestralmente l'importo dei bolli dovuti sulla base delle fatture trasmesse allo SDI. Puoi verificare e, se necessario, modificare il conteggio nel portale "Fatture e Corrispettivi". Il versamento avviene tramite modello F24:
+
+| Trimestre | Scadenza versamento |
+|-----------|-------------------|
+| 1 trimestre (gen-mar) | 31 maggio |
+| 2 trimestre (apr-giu) | 30 settembre |
+| 3 trimestre (lug-set) | 30 novembre |
+| 4 trimestre (ott-dic) | 28 febbraio anno successivo |
+
+Se l'importo del 1 o del 2 trimestre e inferiore a **5.000 euro**, puoi posticipare il versamento al trimestre successivo.
+
+## Fatturazione verso la Pubblica Amministrazione
+
+Se il tuo cliente e un ente pubblico (ministero, comune, azienda sanitaria, universita...), la fattura deve essere in formato **FatturaPA** e indirizzata tramite il **Codice Univoco Ufficio (CUU)** di 6 caratteri, reperibile sull'**IPA** (Indice delle Pubbliche Amministrazioni).
+
+Differenze rispetto al B2B:
+- Codice destinatario di 6 caratteri (non 7)
+- Obbligo di indicare il **CIG** (Codice Identificativo Gara) e/o il **CUP** (Codice Unico di Progetto) se presenti
+- Possibilita di rifiuto da parte della PA entro 15 giorni
+
+## Autofattura e integrazione per acquisti dall'estero
+
+Se acquisti servizi da un fornitore estero (UE o extra-UE), devi emettere un'autofattura elettronica tramite lo SDI. Il tipo documento e:
+
+- **TD17**: per servizi acquistati da soggetti UE o extra-UE
+- **TD18**: per beni acquistati da soggetti UE (acquisti intracomunitari)
+- **TD19**: per beni acquistati da soggetti extra-UE (con IVA in dogana)
+
+L'autofattura serve a integrare l'IVA dovuta in Italia. Devi emetterla entro il **15 del mese successivo** a quello di ricezione del documento del fornitore estero.
+
+Questo obbligo riguarda anche i forfettari dal 2022.
+
+## Conservazione digitale a norma
+
+Le fatture elettroniche devono essere conservate digitalmente per **10 anni**, secondo le regole della conservazione sostitutiva a norma (CAD - Codice dell'Amministrazione Digitale).
+
+### Opzioni di conservazione
+
+**Servizio gratuito dell'Agenzia delle Entrate**: puoi aderire al servizio di conservazione automatica nel portale "Fatture e Corrispettivi". E gratuito e conforme alla normativa. Basta aderire una volta.
+
+**Software di terze parti**: molti software di fatturazione offrono la conservazione a norma come servizio aggiuntivo.
+
+**Commercialista o intermediario**: il tuo commercialista puo gestire la conservazione per conto tuo.
+
+La conservazione deve garantire l'integrita, l'autenticita e la leggibilita del documento per tutto il periodo di conservazione.
+
+## Errori comuni e come correggerli
+
+### Fattura scartata dallo SDI
+
+Se lo SDI scarta la fattura, ricevi una notifica con il codice errore. Gli errori piu comuni:
+
+- **00305**: partita IVA del cedente non presente in Anagrafe Tributaria
+- **00311**: codice destinatario non valido
+- **00400**: il file non rispetta il formato XML
+- **00404**: duplicato (stessi dati identificativi di una fattura gia trasmessa)
+- **00423**: importi non coerenti con le aliquote IVA
+
+Hai 5 giorni per correggere e ritrasmettere. La fattura corretta puo avere lo stesso numero e la stessa data dell'originale (dato che quella scartata non e mai esistita per il fisco).
+
+### Fattura con errori gia accettata dallo SDI
+
+Se la fattura e stata accettata ma contiene errori, non puoi modificarla ne annullarla direttamente. Devi emettere una **nota di credito (TD04)** per annullare la fattura errata, e poi emettere una nuova fattura corretta.
+
+### Dimenticanza di emissione
+
+Le fatture immediate devono essere emesse entro 12 giorni dalla data dell'operazione. Le fatture differite entro il 15 del mese successivo. Il ritardo nell'emissione comporta sanzioni dal 5% al 10% dell'IVA non documentata.
+
+## Novita 2026: cosa cambia
+
+### ViDA (VAT in the Digital Age)
+
+L'Unione Europea sta lavorando al progetto ViDA per armonizzare la fatturazione elettronica in tutta l'UE. L'Italia, avendo gia un sistema consolidato, e in posizione avanzata. Le principali novita attese:
+
+- Interoperabilita tra i sistemi nazionali di e-invoicing
+- Reporting digitale in tempo reale delle transazioni transfrontaliere
+- Standard comuni basati su Peppol e EN 16931
+
+### Tempistiche
+
+Il progetto ViDA prevede un'implementazione graduale dal 2028 al 2030. Per il mercato interno italiano, il sistema SDI restera il riferimento nel 2026 e 2027 senza cambiamenti sostanziali.
+
+## Strumenti per la fatturazione elettronica
+
+### Portale "Fatture e Corrispettivi"
+
+L'Agenzia delle Entrate offre un servizio gratuito per creare, trasmettere e conservare fatture elettroniche. E funzionale ma essenziale: nessuna gestione clienti, nessun report, nessuna automazione.
+
+### Software dedicati
+
+Per chi emette fatture regolarmente, un software dedicato offre:
+- Generazione automatica dell'XML
+- Trasmissione e ricezione tramite SDI
+- Gestione anagrafica clienti
+- Numerazione automatica
+- Calcolo automatico di IVA, rivalsa, ritenuta e bollo
+- Report e analisi
+
+### SwiftBill per la fatturazione professionale
+
+SwiftBill ti permette di creare fatture professionali in pochi secondi, con 15 modelli personalizzabili, tracciamento dei pagamenti e report integrati. La funzione IA foto-a-fattura e particolarmente utile per i freelance che ricevono incarichi informali: fotografa la descrizione del progetto e SwiftBill genera la fattura automaticamente.
+
+---
+
+*Gestisci la fatturazione elettronica senza stress. [Scarica SwiftBill gratis](https://apps.apple.com/app/id6760855924) dall'App Store.*

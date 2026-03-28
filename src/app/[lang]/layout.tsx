@@ -5,7 +5,7 @@ import { Header } from "@/components/sections/Header";
 import { Footer } from "@/components/sections/Footer";
 
 export function generateStaticParams() {
-  return [{ lang: "en" }, { lang: "ar" }];
+  return [{ lang: "en" }, { lang: "ar" }, { lang: "fr" }, { lang: "it" }];
 }
 
 export async function generateMetadata({
@@ -14,7 +14,8 @@ export async function generateMetadata({
   params: Promise<{ lang: string }>;
 }): Promise<Metadata> {
   const { lang: rawLang } = await params;
-  const lang = (rawLang === "ar" ? "ar" : "en") as Lang;
+  const validLangs = ["en", "ar", "fr", "it"];
+  const lang = (validLangs.includes(rawLang) ? rawLang : "en") as Lang;
 
   const title = t(lang, "meta.title");
   const description = t(lang, "meta.description");
@@ -33,7 +34,7 @@ export async function generateMetadata({
       title: ogTitle,
       description: ogDescription,
       type: "website",
-      locale: lang === "ar" ? "ar_SA" : "en_US",
+      locale: lang === "ar" ? "ar_SA" : lang === "fr" ? "fr_FR" : lang === "it" ? "it_IT" : "en_US",
       siteName: "SwiftBill",
       images: [
         {
@@ -55,10 +56,14 @@ export async function generateMetadata({
       languages: {
         en: "/en",
         ar: "/ar",
+        fr: "/fr",
+        it: "/it",
         "en-AE": "/en/uae",
         "ar-AE": "/ar/uae",
         "en-SA": "/en/saudi",
         "ar-SA": "/ar/saudi",
+        "fr-FR": "/fr/france",
+        "it-IT": "/it/italy",
         "x-default": "/en",
       },
     },
@@ -232,7 +237,8 @@ export default async function LangLayout({
   params: Promise<{ lang: string }>;
 }) {
   const { lang: rawLang } = await params;
-  const lang = (rawLang === "ar" ? "ar" : "en") as Lang;
+  const validLangs = ["en", "ar", "fr", "it"];
+  const lang = (validLangs.includes(rawLang) ? rawLang : "en") as Lang;
   const dir = getDir(lang);
 
   return (

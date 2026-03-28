@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "title": "SwiftBill — App di fatturazione professionale per l'Italia",
+    "description": "Crea fatture conformi alle normative italiane con IVA, fatturazione elettronica e 15 modelli PDF. L'app di fatturazione #1 per freelance e PMI in Italia.",
+    "ogTitle": "SwiftBill — Fatturazione professionale per l'Italia"
+  },
+  "hero": {
+    "badge": "Progettato per l'Italia",
+    "title": "Fatture professionali",
+    "titleHighlight": "in pochi secondi.",
+    "subtitle": "Crea fatture conformi con calcolo automatico dell'IVA, modelli professionali e supporto multilingua. Progettato per freelance, liberi professionisti e PMI in Italia."
+  },
+  "features": {
+    "subtitle": "Che tu sia un freelance a Milano, un libero professionista a Roma o un consulente a Napoli — SwiftBill gestisce fatture, preventivi, spese e conformita fiscale per permetterti di concentrarti sul tuo lavoro."
+  }
+}

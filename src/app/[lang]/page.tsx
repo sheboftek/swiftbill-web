@@ -8,7 +8,7 @@ import CTA from "@/components/sections/CTA";
 import { type Lang } from "@/i18n/utils";
 
 export function generateStaticParams() {
-  return [{ lang: "en" }, { lang: "ar" }];
+  return [{ lang: "en" }, { lang: "ar" }, { lang: "fr" }, { lang: "it" }];
 }
 
 export default async function LangPage({
@@ -17,7 +17,8 @@ export default async function LangPage({
   params: Promise<{ lang: string }>;
 }) {
   const { lang: rawLang } = await params;
-  const lang = (rawLang === "ar" ? "ar" : "en") as Lang;
+  const validLangs = ["en", "ar", "fr", "it"];
+  const lang = (validLangs.includes(rawLang) ? rawLang : "en") as Lang;
 
   return (
     <>

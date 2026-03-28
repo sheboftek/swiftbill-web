@@ -1,0 +1,212 @@
+---
+title: "Guida completa alla fatturazione per freelance in Italia"
+description: "Tutto quello che un freelance deve sapere sulla fatturazione in Italia: partita IVA, fattura elettronica, regime forfettario, codice ATECO, termini di pagamento e strumenti per fatturare."
+date: "2026-03-28"
+category: "tips"
+locale: "it"
+author: "SwiftBill"
+---
+
+Hai appena ottenuto il tuo primo incarico come freelance. Complimenti. Ora devi emettere una fattura. E qui le cose si complicano. Serve la fattura elettronica? Quale codice ATECO utilizzare? Cosa cambia con il regime forfettario? Come si gestisce la rivalsa INPS? In Italia, la fatturazione e regolata da norme precise, e una fattura non conforme puo comportare sanzioni significative.
+
+Questa guida copre tutto cio che un freelance in Italia deve sapere per fatturare correttamente, dalla partita IVA alla trasmissione allo SDI.
+
+## Aprire la partita IVA
+
+Prima di fatturare, serve una partita IVA. Non esiste alternativa legale per chi svolge attivita professionale in modo continuativo.
+
+### Il codice ATECO
+
+Il codice ATECO identifica la tua attivita economica. La scelta del codice influisce su:
+- Il coefficiente di redditivita nel regime forfettario
+- La cassa previdenziale di riferimento
+- Le aliquote contributive
+
+Alcuni codici ATECO comuni per i freelance:
+- **62.01.00** - Produzione di software (sviluppatori)
+- **62.02.00** - Consulenza informatica
+- **73.11.02** - Attivita di comunicazione e marketing
+- **74.10.21** - Attivita di design (designer, grafici)
+- **74.90.99** - Altre attivita professionali (consulenza generica)
+- **70.22.09** - Consulenza aziendale e gestionale
+
+Scegli il codice piu specifico possibile. Se svolgi piu attivita, puoi avere codici ATECO multipli sulla stessa partita IVA.
+
+### Regime forfettario vs regime ordinario
+
+La prima grande scelta e il regime fiscale.
+
+**Regime forfettario:**
+- Fatturato massimo: 85.000 euro annui
+- Imposta sostitutiva del 15% (ridotta al 5% per i primi 5 anni se requisiti soddisfatti)
+- Non si addebita IVA in fattura
+- Non si detraggono i costi reali (si applica un coefficiente di redditivita forfettario)
+- Niente IRAP
+- Contabilita semplificata
+
+**Regime ordinario (semplificato o contabilita ordinaria):**
+- Nessun limite di fatturato
+- IRPEF a scaglioni (23% - 43%)
+- Si addebita IVA in fattura (e si detrae l'IVA sugli acquisti)
+- Si deducono i costi reali dal reddito
+- IRAP dovuta (se applicabile)
+- Contabilita piu complessa
+
+Per la maggior parte dei freelance che iniziano, il forfettario e la scelta piu vantaggiosa. Ma se hai costi elevati (attrezzature, collaboratori, affitto studio), il regime ordinario potrebbe convenirti grazie alla deduzione dei costi reali.
+
+## La fattura elettronica: obbligatoria per tutti
+
+Dal 1 gennaio 2024, la fatturazione elettronica e obbligatoria per tutti i titolari di partita IVA, compresi i forfettari. Non esistono piu esenzioni basate sul fatturato.
+
+### Come funziona
+
+1. **Crei la fattura** in formato XML conforme alle specifiche dell'Agenzia delle Entrate
+2. **La trasmetti al Sistema di Interscambio (SDI)** tramite il tuo software o intermediario
+3. **Lo SDI controlla** la correttezza formale della fattura
+4. **Lo SDI recapita** la fattura al destinatario (tramite codice destinatario o PEC)
+5. **Ricevi notifica** di accettazione o scarto
+
+Non puoi piu inviare fatture in PDF via email ai tuoi clienti professionali. La fattura deve transitare per lo SDI. Il PDF resta utile come copia di cortesia, ma non ha valore fiscale.
+
+### Codice destinatario e PEC
+
+Per recapitare la fattura al cliente, ti servono:
+- **Codice destinatario (SDI)**: un codice alfanumerico di 7 caratteri che identifica il software di ricezione del cliente
+- **PEC**: l'indirizzo di posta elettronica certificata del cliente (alternativa al codice destinatario)
+
+Se il cliente e un privato (consumatore finale), il codice destinatario e **0000000** (sette zeri) e la fattura viene depositata nel cassetto fiscale del cliente.
+
+## Le informazioni obbligatorie in fattura
+
+### Dati dell'emittente (tu)
+
+- **Nome e cognome** (o ragione sociale se hai una societa)
+- **Indirizzo della sede legale** o del domicilio fiscale
+- **Partita IVA**
+- **Codice fiscale**
+- **Regime fiscale applicato** (codice regime nel tracciato XML)
+
+### Dati del committente (il tuo cliente)
+
+- **Denominazione o nome e cognome**
+- **Indirizzo della sede legale**
+- **Partita IVA** (per clienti con P.IVA) o **codice fiscale** (per privati)
+- **Codice destinatario SDI** o **PEC**
+
+### Dati della fattura
+
+- **Numero progressivo** univoco e sequenziale
+- **Data di emissione**
+- **Tipo documento** (TD01 per fattura, TD04 per nota di credito, TD06 per parcella, etc.)
+- **Descrizione dei beni o servizi** prestati
+- **Quantita e prezzo unitario**
+- **Aliquota IVA** applicata (o codice di esenzione per i forfettari)
+- **Importo totale**
+
+### Dati di pagamento
+
+- **Condizioni di pagamento** (pagamento completo, rata, anticipo)
+- **Modalita di pagamento** (bonifico bancario, assegno, contanti, etc.)
+- **IBAN** per il pagamento tramite bonifico
+- **Scadenza di pagamento**
+
+## Fatturare in regime forfettario
+
+Se sei in regime forfettario, la fattura ha caratteristiche specifiche.
+
+### Niente IVA
+
+Non addebiti l'IVA al cliente. La fattura riporta solo l'imponibile, senza alcuna riga IVA.
+
+Devi inserire la seguente dicitura obbligatoria:
+
+> **"Operazione effettuata ai sensi dell'articolo 1, commi da 54 a 89, della Legge n. 190/2014 e successive modificazioni. Si richiede la non applicazione della ritenuta alla fonte a titolo d'acconto ai sensi dell'articolo 1 comma 67 della Legge n. 190/2014."**
+
+### La rivalsa INPS del 4%
+
+Se sei iscritto alla Gestione Separata INPS (la maggior parte dei freelance senza albo), puoi addebitare al cliente una rivalsa del 4% a titolo di contributo previdenziale. Non e obbligatoria, ma e fortemente consigliata perche riduce il tuo carico contributivo netto.
+
+### Esempio di fattura forfettaria
+
+| Voce | Importo |
+|------|---------|
+| Consulenza strategia digitale - marzo 2026 | 2.000,00 euro |
+| Rivalsa INPS 4% | 80,00 euro |
+| **Totale** | **2.080,00 euro** |
+| IVA | Esente (art. 1, c. 54-89, L. 190/2014) |
+
+### Imposta di bollo
+
+Se la fattura supera i 77,47 euro, devi applicare un'imposta di bollo di **2 euro**. Per le fatture elettroniche, il bollo e virtuale: lo indichi nel tracciato XML e lo versi trimestralmente tramite il portale dell'Agenzia delle Entrate.
+
+## Fatturare in regime ordinario
+
+In regime ordinario, addebiti l'IVA al cliente.
+
+### Aliquote IVA
+
+- **22%**: aliquota ordinaria (la maggior parte delle prestazioni di servizi)
+- **10%**: aliquota ridotta (alcune prestazioni edili, alimentari, turistiche)
+- **5%**: aliquota super-ridotta (alcune prestazioni socio-sanitarie)
+- **4%**: aliquota minima (generi di prima necessita)
+
+### Ritenuta d'acconto
+
+Se fatturi a un sostituto d'imposta (azienda o professionista con P.IVA), il cliente trattiene il 20% dell'imponibile come ritenuta d'acconto IRPEF e lo versa all'Erario per tuo conto. Tu incassi il netto.
+
+### Esempio di fattura ordinaria
+
+| Voce | Importo |
+|------|---------|
+| Consulenza strategia digitale - marzo 2026 | 2.000,00 euro |
+| Rivalsa INPS 4% | 80,00 euro |
+| Imponibile IVA | 2.080,00 euro |
+| IVA 22% | 457,60 euro |
+| **Totale fattura** | **2.537,60 euro** |
+| Ritenuta d'acconto 20% su 2.080,00 | -416,00 euro |
+| **Netto a pagare** | **2.121,60 euro** |
+
+## La numerazione delle fatture
+
+Le fatture devono avere una numerazione progressiva, univoca e senza interruzioni. Il formato e libero, ma deve consentire di ricostruire l'ordine cronologico.
+
+Formati comuni:
+- **1, 2, 3...** (numerazione semplice, ricomincia ogni anno)
+- **2026/001, 2026/002...** (con prefisso anno)
+- **FT-2026-001** (con prefisso tipo documento)
+
+Se emetti fatture e note di credito, puoi usare la stessa serie numerica o serie separate. Entrambe le opzioni sono valide.
+
+## I termini di pagamento
+
+### Regole generali
+
+In Italia, il termine di pagamento standard e di **30 giorni dalla data di emissione** della fattura. Per le transazioni tra imprese, il termine massimo e di **60 giorni** (salvo accordi diversi specificati nel contratto, purche non gravemente iniqui).
+
+### Interessi di mora
+
+In caso di ritardo nel pagamento, il creditore ha diritto agli interessi di mora calcolati al tasso BCE + 8 punti percentuali (D.Lgs. 231/2002). Piu un importo forfettario di **40 euro** per i costi di recupero.
+
+### Consigli per farsi pagare
+
+- **Fattura immediatamente** dopo la consegna del lavoro
+- **Indica chiaramente l'IBAN** e la scadenza in fattura
+- **Chiedi un anticipo** del 30-50% per i progetti di valore elevato
+- **Invia solleciti** puntuali: il giorno dopo la scadenza, poi dopo una settimana
+- **Inserisci clausole di pagamento** nel contratto di collaborazione
+
+## Come SwiftBill semplifica la fatturazione
+
+SwiftBill e progettato per freelance e professionisti che vogliono fatturare velocemente e senza errori:
+
+- **IA foto-a-fattura**: fotografa un preventivo scritto a mano o una descrizione di progetto, e l'IA crea la fattura automaticamente
+- **15 modelli PDF professionali** personalizzabili con logo, colori e informazioni aziendali
+- **Numerazione automatica** senza interruzioni ne duplicati
+- **Gestione multi-valuta** per clienti internazionali (22 valute supportate)
+- **Tracciamento pagamenti** con indicatori visivi (in attesa, pagata, in ritardo)
+- **Fatture ricorrenti** per contratti mensili o periodici
+- **Export CSV e PDF** per il commercialista
+
+---
+
+*Fattura in modo professionale. [Scarica SwiftBill gratis](https://apps.apple.com/app/id6760855924) dall'App Store.*

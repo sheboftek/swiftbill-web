@@ -1,7 +1,7 @@
 import { type Lang, t } from "@/i18n/utils";
 
 export function generateStaticParams() {
-  return [{ lang: "en" }, { lang: "ar" }];
+  return [{ lang: "en" }, { lang: "ar" }, { lang: "fr" }, { lang: "it" }];
 }
 
 export default async function PrivacyPage({
@@ -10,7 +10,8 @@ export default async function PrivacyPage({
   params: Promise<{ lang: string }>;
 }) {
   const { lang: rawLang } = await params;
-  const lang = (rawLang === "ar" ? "ar" : "en") as Lang;
+  const validLangs = ["en", "ar", "fr", "it"];
+  const lang = (validLangs.includes(rawLang) ? rawLang : "en") as Lang;
 
   return (
     <section style={{ paddingBlockStart: 140, paddingBlockEnd: 80 }}>

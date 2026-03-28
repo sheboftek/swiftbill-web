@@ -18,6 +18,8 @@ export function generateStaticParams() {
     { lang: "en", country: "saudi" },
     { lang: "ar", country: "uae" },
     { lang: "ar", country: "saudi" },
+    { lang: "fr", country: "france" },
+    { lang: "it", country: "italy" },
   ];
 }
 
@@ -27,7 +29,8 @@ export async function generateMetadata({
   params: Promise<{ lang: string; country: string }>;
 }): Promise<Metadata> {
   const { lang: rawLang, country: rawCountry } = await params;
-  const lang = (rawLang === "ar" ? "ar" : "en") as Lang;
+  const validLangs = ["en", "ar", "fr", "it"];
+  const lang = (validLangs.includes(rawLang) ? rawLang : "en") as Lang;
   const country = countryFromSlug(rawCountry);
 
   return {
@@ -39,10 +42,14 @@ export async function generateMetadata({
       languages: {
         en: `${BASE_URL}/en/`,
         ar: `${BASE_URL}/ar/`,
+        fr: `${BASE_URL}/fr/`,
+        it: `${BASE_URL}/it/`,
         "en-AE": `${BASE_URL}/en/uae/`,
         "ar-AE": `${BASE_URL}/ar/uae/`,
         "en-SA": `${BASE_URL}/en/saudi/`,
         "ar-SA": `${BASE_URL}/ar/saudi/`,
+        "fr-FR": `${BASE_URL}/fr/france/`,
+        "it-IT": `${BASE_URL}/it/italy/`,
         "x-default": `${BASE_URL}/en/`,
       },
     },
@@ -55,7 +62,8 @@ export default async function CountryPage({
   params: Promise<{ lang: string; country: string }>;
 }) {
   const { lang: rawLang, country: rawCountry } = await params;
-  const lang = (rawLang === "ar" ? "ar" : "en") as Lang;
+  const validLangs = ["en", "ar", "fr", "it"];
+  const lang = (validLangs.includes(rawLang) ? rawLang : "en") as Lang;
   const country = countryFromSlug(rawCountry);
 
   if (!country) {

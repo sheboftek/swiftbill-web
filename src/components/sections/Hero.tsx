@@ -56,9 +56,27 @@ const trustItemsUAE = [
   "Consultants",
 ];
 
+const trustItemsFrance = [
+  "Freelances",
+  "Auto-entrepreneurs",
+  "Paris",
+  "Lyon",
+  "Consultants",
+];
+
+const trustItemsItaly = [
+  "Freelance",
+  "Liberi professionisti",
+  "Milano",
+  "Roma",
+  "Consulenti",
+];
+
 function getTrustItems(country?: Country): string[] {
   if (country === "sa") return trustItemsSaudi;
   if (country === "ae") return trustItemsUAE;
+  if (country === "fr") return trustItemsFrance;
+  if (country === "it") return trustItemsItaly;
   return trustItemsGeneric;
 }
 
@@ -120,20 +138,15 @@ export function Hero({ lang, country }: { lang: Lang; country?: Country }) {
               variants={fadeUp}
               className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center"
             >
-              {/* Primary CTA — Onramper: #151515 bg, rounded-[70px], 20px, 500wt */}
+              {/* Primary CTA */}
               <a
                 href={APP_STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="button primary inline-flex items-center gap-2"
+                style={{ padding: "14px 28px", fontSize: 17 }}
               >
-                {/* Apple icon */}
-                <svg
-                  className="h-5 w-5"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 16.56 2.93 11.3 4.7 7.72C5.57 5.94 7.36 4.86 9.28 4.84C10.56 4.81 11.78 5.7 12.57 5.7C13.36 5.7 14.85 4.62 16.4 4.8C17.04 4.83 18.83 5.05 19.97 6.7C19.87 6.76 17.64 8.07 17.67 10.8C17.7 14.1 20.52 15.19 20.55 15.2C20.52 15.27 20.08 16.78 18.97 18.33L18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" />
                 </svg>
                 {t(lang, "hero.cta")}
@@ -143,6 +156,7 @@ export function Hero({ lang, country }: { lang: Lang; country?: Country }) {
               <a
                 href="#features"
                 className="button secondary"
+                style={{ padding: "14px 28px", fontSize: 17 }}
               >
                 {t(lang, "hero.ctaSecondary")}
               </a>
@@ -155,47 +169,30 @@ export function Hero({ lang, country }: { lang: Lang; country?: Country }) {
             >
               {/* Templates */}
               <div>
-                <h5 className="text-[#151515]">
-                  <NumberTicker
-                    value={15}
-                    suffix="+"
-                    className="tabular-nums"
-                  />
-                </h5>
-                <div className="mt-1 text-[16px] text-[#808099]">
-                  Templates
+                <div className="font-heading tabular-nums" style={{ fontSize: 42, fontWeight: 500, letterSpacing: "-0.42px", lineHeight: "110%", color: "#151515" }}>
+                  <NumberTicker value={15} suffix="+" className="tabular-nums" />
                 </div>
+                <div className="mt-1 text-[16px] text-[#808099]">Templates</div>
               </div>
 
               <div className="h-8 w-px bg-[#e5e5e7]" aria-hidden="true" />
 
               {/* Currencies */}
               <div>
-                <h5 className="text-[#151515]">
-                  <NumberTicker
-                    value={22}
-                    className="tabular-nums"
-                  />
-                </h5>
-                <div className="mt-1 text-[16px] text-[#808099]">
-                  Currencies
+                <div className="font-heading tabular-nums" style={{ fontSize: 42, fontWeight: 500, letterSpacing: "-0.42px", lineHeight: "110%", color: "#151515" }}>
+                  <NumberTicker value={22} className="tabular-nums" />
                 </div>
+                <div className="mt-1 text-[16px] text-[#808099]">Currencies</div>
               </div>
 
               <div className="h-8 w-px bg-[#e5e5e7]" aria-hidden="true" />
 
-              {/* Rating */}
+              {/* Languages */}
               <div>
-                <h5 className="text-[#151515]">
-                  <NumberTicker
-                    value={4}
-                    suffix=".9+"
-                    className="tabular-nums"
-                  />
-                </h5>
-                <div className="mt-1 text-[16px] text-[#808099]">
-                  App Store
+                <div className="font-heading tabular-nums" style={{ fontSize: 42, fontWeight: 500, letterSpacing: "-0.42px", lineHeight: "110%", color: "#151515" }}>
+                  <NumberTicker value={4} className="tabular-nums" />
                 </div>
+                <div className="mt-1 text-[16px] text-[#808099]">Languages</div>
               </div>
             </motion.div>
           </motion.div>

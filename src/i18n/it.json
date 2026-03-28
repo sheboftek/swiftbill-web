@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "title": "SwiftBill — Fatturazione professionale per freelance e piccole imprese",
+    "description": "Crea, invia e monitora fatture professionali in pochi secondi. 15 modelli PDF, generazione con IA, conformita IVA. Scarica gratis dall'App Store.",
+    "ogTitle": "SwiftBill — Incassa piu velocemente",
+    "ogDescription": "App di fatturazione professionale per freelance. 15 modelli, generazione con IA, supporto multivaluta."
+  },
+  "nav": {
+    "features": "Funzionalita",
+    "pricing": "Prezzi",
+    "blog": "Blog",
+    "download": "Scarica"
+  },
+  "hero": {
+    "badge": "Scelto dai freelance di tutto il mondo",
+    "title": "Fatture professionali",
+    "titleHighlight": "in pochi secondi.",
+    "subtitle": "Crea, personalizza e invia fatture impeccabili con 15 modelli PDF, generazione tramite IA e calcolo automatico dell'IVA. Incassa piu velocemente, ovunque ti trovi.",
+    "cta": "Scarica gratis dall'App Store",
+    "ctaSecondary": "Scopri le funzionalita",
+    "stats": {
+      "templates": "15 modelli PDF",
+      "languages": "8 lingue",
+      "currencies": "22 valute"
+    }
+  },
+  "features": {
+    "label": "Progettato per i professionisti",
+    "title": "Tutto cio che ti serve per essere pagato",
+    "titleHighlight": "dal preventivo al pagamento",
+    "subtitle": "Che tu sia freelance, designer, appaltatore o consulente, SwiftBill gestisce documenti, spese e conformita fiscale per permetterti di concentrarti sul tuo lavoro.",
+    "cta": "Scarica gratis",
+    "items": {
+      "documents": {
+        "title": "fatture",
+        "description": "Crea, invia e monitora fatture e ricevute professionali"
+      },
+      "estimates": {
+        "title": "preventivi",
+        "description": "Conquista progetti con preventivi e contratti professionali"
+      },
+      "expenses": {
+        "title": "spese",
+        "description": "Monitora le spese, categorizza i costi e visualizza il tuo profitto reale"
+      },
+      "ai": {
+        "title": "strumenti IA",
+        "description": "15 modelli, generazione con IA, OCR ricevute e compilazione automatica intelligente"
+      },
+      "templates": {
+        "title": "15 modelli professionali",
+        "description": "Progettati per ogni brand e settore, dal Classico all'Executive."
+      },
+      "global": {
+        "title": "Pronto per il commercio globale",
+        "description": "22 valute, conformita IVA e fatture ricorrenti automatizzate."
+      }
+    }
+  },
+  "compliance": {
+    "label": "Conformita fiscale",
+    "title": "Progettato per la regione del Golfo",
+    "subtitle": "SwiftBill genera fatture conformi ai requisiti pubblicati da ZATCA e FTA degli EAU. I requisiti possono cambiare: verificare sempre con il proprio consulente fiscale.",
+    "zatca": {
+      "title": "Formato ZATCA (Autorita doganale e fiscale) Fase 1",
+      "subtitle": "Arabia Saudita",
+      "description": "Generazione codici QR secondo le specifiche TLV pubblicate, formati fattura arabo e bilingue, calcoli IVA e campi per il numero di registrazione fiscale.",
+      "features": ["Codice QR con codifica TLV", "Formati arabo e bilingue", "Calcolo IVA", "Numeri di registrazione fiscale"]
+    },
+    "uae": {
+      "title": "Formato fattura FTA degli EAU",
+      "subtitle": "Emirati Arabi Uniti",
+      "description": "Formato fattura conforme alle linee guida FTA pubblicate con visualizzazione TRN, dettaglio IVA e varianti inglese/arabo. Non certificato ufficialmente dalla FTA.",
+      "features": ["Linee guida formato FTA", "Visualizzazione TRN", "Varianti inglese e arabo", "Dettaglio IVA"]
+    },
+    "cta": "Scarica SwiftBill gratis"
+  },
+  "templates": {
+    "label": "Modelli",
+    "title": "15 modelli professionali",
+    "subtitle": "Scegli il design perfetto per la tua attivita. Ogni modello e progettato per chiarezza, professionalita e impatto.",
+    "cta": "Vedi tutti i modelli nell'app",
+    "categories": {
+      "all": "Tutti",
+      "classic": "Classico",
+      "modern": "Moderno",
+      "professional": "Professionale"
+    },
+    "items": {
+      "classic": { "name": "Classico", "tag": "Gratis" },
+      "minimal": { "name": "Minimal", "tag": "Pro" },
+      "modern": { "name": "Moderno", "tag": "Pro" },
+      "bold": { "name": "Bold", "tag": "Pro" },
+      "elegant": { "name": "Elegante", "tag": "Pro" },
+      "corporate": { "name": "Corporate", "tag": "Pro" },
+      "freelancer": { "name": "Freelance", "tag": "Pro" },
+      "commercial": { "name": "Commerciale", "tag": "Pro" },
+      "executive": { "name": "Executive", "tag": "Pro" },
+      "navy": { "name": "Navy", "tag": "Pro" },
+      "fresh": { "name": "Fresh", "tag": "Pro" },
+      "refined": { "name": "Raffinato", "tag": "Pro" },
+      "contractor": { "name": "Appaltatore", "tag": "Pro" },
+      "studio": { "name": "Studio", "tag": "Pro" },
+      "hourly": { "name": "A ore", "tag": "Pro" }
+    }
+  },
+  "pricing": {
+    "label": "Prezzi",
+    "title": "Prezzi semplici e trasparenti",
+    "subtitle": "Inizia gratis. Passa alla versione Pro quando sei pronto.",
+    "monthly": "Mensile",
+    "yearly": "Annuale",
+    "yearlyDiscount": "Risparmia il 44%",
+    "free": {
+      "name": "Gratis",
+      "price": "$ 0",
+      "period": "per sempre",
+      "description": "Perfetto per iniziare",
+      "features": [
+        "1 fattura al mese",
+        "1 ricevuta al mese",
+        "Modello PDF classico",
+        "Report di base",
+        "Sincronizzazione cloud"
+      ],
+      "cta": "Scarica gratis"
+    },
+    "pro": {
+      "name": "Pro",
+      "priceMonthly": "$ 5,99",
+      "priceYearly": "$ 39,99",
+      "periodMonthly": "/mese",
+      "periodYearly": "/anno",
+      "trialMonthly": "Prova gratuita di 3 giorni",
+      "trialYearly": "Prova gratuita di 7 giorni",
+      "description": "Tutto cio che ti serve per crescere",
+      "features": [
+        "Fatture e ricevute illimitate",
+        "Tutti i 15 modelli PDF",
+        "Generazione con IA",
+        "Monitoraggio spese",
+        "Fatture ricorrenti",
+        "Conformita IVA",
+        "Supporto multivaluta",
+        "Esportazione CSV",
+        "Supporto prioritario"
+      ],
+      "cta": "Inizia la prova gratuita"
+    }
+  },
+  "cta": {
+    "title": "Pronto a incassare piu velocemente?",
+    "subtitle": "Unisciti a migliaia di freelance che si affidano a SwiftBill per la fatturazione professionale.",
+    "button": "Scarica gratis dall'App Store",
+    "note": "Gratis per iniziare. Nessuna carta di credito richiesta."
+  },
+  "footer": {
+    "tagline": "Fatturazione professionale per freelance e piccole imprese.",
+    "product": "Prodotto",
+    "legal": "Note legali",
+    "support": "Assistenza",
+    "privacy": "Informativa sulla privacy",
+    "terms": "Termini di servizio",
+    "contact": "Contattaci",
+    "email": "support@getswiftbill.app",
+    "copyright": "SwiftBill. Tutti i diritti riservati.",
+    "madeWith": "Realizzato con cura per i freelance di tutto il mondo."
+  },
+  "privacy": {
+    "title": "Informativa sulla privacy",
+    "lastUpdated": "Ultimo aggiornamento: 28 marzo 2026"
+  },
+  "terms": {
+    "title": "Termini di servizio",
+    "lastUpdated": "Ultimo aggiornamento: 26 marzo 2026"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Consigli, guide e aggiornamenti per freelance e piccole imprese.",
+    "readMore": "Continua a leggere",
+    "allPosts": "Tutti gli articoli",
+    "categories": {
+      "all": "Tutti",
+      "tips": "Consigli fatturazione",
+      "tax": "Guide fiscali",
+      "updates": "Novita"
+    },
+    "backToBlog": "Torna al blog"
+  }
+}

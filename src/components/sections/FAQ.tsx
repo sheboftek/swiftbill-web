@@ -81,6 +81,62 @@ const faqData: Record<string, FAQItem[]> = {
 /*  Country-specific FAQ items                                         */
 /* ------------------------------------------------------------------ */
 
+const faqDataFr: FAQItem[] = [
+  {
+    question: "SwiftBill est-il vraiment gratuit ?",
+    answer:
+      "Oui ! Le plan gratuit inclut 1 facture et 1 re\u00e7u par mois avec le mod\u00e8le Classique. Vous pouvez cr\u00e9er, personnaliser et partager des documents professionnels sans frais. Passez au plan Pro pour des documents illimit\u00e9s, les 15 mod\u00e8les, la g\u00e9n\u00e9ration par IA, le suivi des d\u00e9penses et bien plus.",
+  },
+  {
+    question: "Quels types de documents puis-je cr\u00e9er ?",
+    answer:
+      "Factures, devis, contrats, re\u00e7us et avoirs. Chaque type de document prend en charge la personnalisation compl\u00e8te : lignes de facturation, calculs de taxes, remises, logo personnalis\u00e9 et export PDF professionnel au format lettre.",
+  },
+  {
+    question: "Quels formats fiscaux sont pris en charge ?",
+    answer:
+      "SwiftBill g\u00e9n\u00e8re des factures conformes aux exigences publi\u00e9es de ZATCA Phase 1 pour l\u2019Arabie saoudite et aux directives de la FTA des EAU. Le support multi-devises couvre 22 devises avec calcul de TVA et taux personnalis\u00e9s. V\u00e9rifiez toujours aupr\u00e8s de votre conseiller fiscal.",
+  },
+  {
+    question: "Puis-je suivre mes d\u00e9penses et mes b\u00e9n\u00e9fices ?",
+    answer:
+      "Oui ! Capturez vos re\u00e7us par OCR intelligent, cat\u00e9gorisez vos d\u00e9penses et consultez des rapports d\u00e9taill\u00e9s sur vos b\u00e9n\u00e9fices. Exportez vos donn\u00e9es en CSV ou PDF pour votre comptable. Disponible avec le plan Pro.",
+  },
+  {
+    question: "Comment fonctionne la g\u00e9n\u00e9ration de documents par IA ?",
+    answer:
+      "D\u00e9crivez ce dont vous avez besoin en texte simple \u2014 l\u2019IA de SwiftBill cr\u00e9e un document complet et professionnel avec lignes de facturation, calculs de taxes et mise en forme adapt\u00e9e. G\u00e9n\u00e9ration de factures, devis, contrats et plus en quelques secondes.",
+  },
+];
+
+const faqDataIt: FAQItem[] = [
+  {
+    question: "SwiftBill \u00e8 davvero gratuito?",
+    answer:
+      "S\u00ec! Il piano gratuito include 1 fattura e 1 ricevuta al mese con il modello Classico. Puoi creare, personalizzare e condividere documenti professionali senza costi. Passa al piano Pro per documenti illimitati, tutti i 15 modelli, generazione con IA, monitoraggio spese e molto altro.",
+  },
+  {
+    question: "Quali tipi di documenti posso creare?",
+    answer:
+      "Fatture, preventivi, contratti, ricevute e note di credito. Ogni tipo di documento supporta la personalizzazione completa: voci, calcoli fiscali, sconti, logo personalizzato ed esportazione PDF professionale in formato lettera.",
+  },
+  {
+    question: "Quali formati fiscali sono supportati?",
+    answer:
+      "SwiftBill genera fatture conformi ai requisiti pubblicati di ZATCA Fase 1 per l\u2019Arabia Saudita e alle linee guida della FTA degli EAU. Il supporto multivaluta copre 22 valute con calcolo IVA e aliquote personalizzate. Verificare sempre con il proprio consulente fiscale.",
+  },
+  {
+    question: "Posso monitorare spese e profitti?",
+    answer:
+      "S\u00ec! Acquisisci ricevute con OCR intelligente, categorizza le spese e visualizza report dettagliati sui profitti. Esporta i dati in CSV o PDF per il tuo commercialista. Disponibile con il piano Pro.",
+  },
+  {
+    question: "Come funziona la generazione di documenti con IA?",
+    answer:
+      "Descrivi ci\u00f2 di cui hai bisogno in testo semplice \u2014 l\u2019IA di SwiftBill crea un documento completo e professionale con voci appropriate, calcoli fiscali e formattazione. Genera fatture, preventivi, contratti e altro in pochi secondi.",
+  },
+];
+
 const countryFaqData: Record<string, Record<string, FAQItem[]>> = {
   sa: {
     en: [
@@ -134,6 +190,34 @@ const countryFaqData: Record<string, Record<string, FAQItem[]>> = {
       },
     ],
   },
+  fr: {
+    fr: [
+      {
+        question: "SwiftBill est-il conforme aux normes de facturation fran\u00e7aises ?",
+        answer:
+          "SwiftBill g\u00e9n\u00e8re des factures professionnelles avec calcul automatique de la TVA, mentions l\u00e9gales et num\u00e9rotation s\u00e9quentielle. Bien que SwiftBill ne soit pas certifi\u00e9 officiellement par l\u2019administration fiscale fran\u00e7aise, il produit des documents conformes aux exigences de pr\u00e9sentation standard. V\u00e9rifiez toujours avec votre expert-comptable.",
+      },
+      {
+        question: "Comment calculer la TVA sur mes factures ?",
+        answer:
+          "SwiftBill calcule automatiquement la TVA selon le taux que vous d\u00e9finissez (20 %, 10 %, 5,5 % ou 2,1 % pour la France). Vous pouvez configurer un taux par d\u00e9faut dans votre profil d\u2019entreprise et l\u2019ajuster par ligne si n\u00e9cessaire. Le montant HT, la TVA et le TTC sont affich\u00e9s clairement sur chaque facture.",
+      },
+    ],
+  },
+  it: {
+    it: [
+      {
+        question: "SwiftBill \u00e8 conforme alle normative italiane sulla fatturazione?",
+        answer:
+          "SwiftBill genera fatture professionali con calcolo automatico dell\u2019IVA, numerazione sequenziale e tutti i campi richiesti dalla normativa italiana. Sebbene SwiftBill non sia certificato ufficialmente dall\u2019Agenzia delle Entrate, produce documenti conformi ai requisiti di presentazione standard. Verificare sempre con il proprio commercialista.",
+      },
+      {
+        question: "Come funziona la fatturazione elettronica in Italia?",
+        answer:
+          "La fatturazione elettronica \u00e8 obbligatoria in Italia per la maggior parte delle transazioni B2B e B2C. SwiftBill genera fatture PDF professionali con tutti i dati necessari (partita IVA, codice destinatario, dettaglio IVA). Per l\u2019invio tramite il Sistema di Interscambio (SDI), potrebbe essere necessario un passaggio aggiuntivo con il proprio gestionale o commercialista.",
+      },
+    ],
+  },
 };
 
 /* ------------------------------------------------------------------ */
@@ -141,7 +225,14 @@ const countryFaqData: Record<string, Record<string, FAQItem[]>> = {
 /* ------------------------------------------------------------------ */
 
 function getFaqItems(lang: string, country?: Country): FAQItem[] {
-  const baseItems = faqData[lang] ?? faqData.en;
+  let baseItems: FAQItem[];
+  if (lang === "fr") {
+    baseItems = faqDataFr;
+  } else if (lang === "it") {
+    baseItems = faqDataIt;
+  } else {
+    baseItems = faqData[lang] ?? faqData.en;
+  }
   if (!country) return baseItems;
 
   const countryItems = countryFaqData[country]?.[lang] ?? countryFaqData[country]?.en ?? [];
@@ -262,7 +353,7 @@ export default function FAQ({ lang, country }: { lang: Lang; country?: Country }
               lineHeight: "90%",
             }}
           >
-            Frequently asked questions.
+            {lang === "ar" ? "\u0623\u0633\u0626\u0644\u0629 \u0634\u0627\u0626\u0639\u0629." : lang === "fr" ? "Questions fr\u00e9quentes." : lang === "it" ? "Domande frequenti." : "Frequently asked questions."}
           </h3>
         </motion.div>
 

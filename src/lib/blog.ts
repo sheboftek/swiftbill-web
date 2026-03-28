@@ -75,7 +75,7 @@ export function getPostBySlug(lang: Lang, slug: string): BlogPost | null {
 export function getAllSlugs(): string[] {
   const slugSet = new Set<string>();
 
-  for (const lang of ["en", "ar"] as const) {
+  for (const lang of ["en", "ar", "fr", "it"] as const) {
     const dir = path.join(CONTENT_DIR, lang);
     if (!fs.existsSync(dir)) continue;
 
