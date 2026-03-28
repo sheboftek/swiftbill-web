@@ -1,5 +1,13 @@
 node_modules/
+.next/
+out/
 dist/
 .astro/
 .DS_Store
 *.log
+*.tsbuildinfo
+next-env.d.ts
+
+# Reference sites
+Onbramper/
+saveweb2zip-com-racon360-com/

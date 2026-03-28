@@ -1,0 +1,236 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/sora";
+
+/* ───────────────────────────────────────────
+   Theme tokens — Onramper design system
+   ─────────────────────────────────────────── */
+@theme {
+  --font-sans: "Inter Variable", "Inter", system-ui, -apple-system, sans-serif;
+  --font-heading: "Sora Variable", "Sora", system-ui, sans-serif;
+
+  --color-pearl: #efeef3;
+  --color-white: #ffffff;
+  --color-off-black: #151515;
+  --color-body-copy: #6a6a84;
+  --color-steel: #808099;
+  --color-blue: #3053EC;
+  --color-blue-dark: #2040C0;
+  --color-teal: #33e7a1;
+}
+
+/* ───────────────────────────────────────────
+   Base
+   ─────────────────────────────────────────── */
+html {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-pearl);
+  color: var(--color-off-black);
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-pearl);
+  color: var(--color-off-black);
+}
+
+/* ───────────────────────────────────────────
+   Selection
+   ─────────────────────────────────────────── */
+::selection {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+/* ───────────────────────────────────────────
+   Typography — Onramper exact values
+   ─────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  margin: 0;
+}
+
+h1 {
+  font-weight: 700;
+  letter-spacing: -1.1px;
+  line-height: 90%;
+}
+
+h2 {
+  font-size: 90px;
+  font-weight: 700;
+  letter-spacing: -1.8px;
+  line-height: 100%;
+}
+
+h3 {
+  font-size: 70px;
+  font-weight: 500;
+  letter-spacing: -1.4px;
+  line-height: 100%;
+}
+
+h4 {
+  font-size: 50px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  line-height: 100%;
+}
+
+h5 {
+  font-size: 42px;
+  font-weight: 500;
+  letter-spacing: -0.42px;
+  line-height: 110%;
+}
+
+h6 {
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.36px;
+  line-height: 120%;
+}
+
+p {
+  font-size: 16px;
+  letter-spacing: -0.16px;
+  line-height: 130%;
+  margin-bottom: 0;
+}
+
+/* ───────────────────────────────────────────
+   Buttons — Onramper exact values
+   ─────────────────────────────────────────── */
+.button {
+  border-radius: 70px;
+  padding: 18px 30px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 110%;
+  letter-spacing: -0.2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  transition: all 0.35s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.button.primary {
+  border: 2px solid var(--color-off-black);
+  background: var(--color-off-black);
+  color: var(--color-white);
+}
+
+.button.primary:hover {
+  opacity: 0.8;
+}
+
+.button.secondary {
+  border: 2px solid var(--color-off-black);
+  background: transparent;
+  color: var(--color-off-black);
+}
+
+.button.secondary:hover {
+  color: var(--color-white);
+  background: rgba(21, 21, 21, 0.8);
+  border-color: transparent;
+}
+
+/* ───────────────────────────────────────────
+   Responsive typography
+   ─────────────────────────────────────────── */
+@media (max-width: 991px) {
+  h2 {
+    font-size: 60px;
+    letter-spacing: -1.2px;
+  }
+
+  h3 {
+    font-size: 48px;
+    letter-spacing: -0.96px;
+  }
+
+  h4 {
+    font-size: 38px;
+    letter-spacing: -0.38px;
+  }
+
+  h5 {
+    font-size: 32px;
+    letter-spacing: -0.32px;
+  }
+
+  h6 {
+    font-size: 28px;
+    letter-spacing: -0.28px;
+  }
+}
+
+@media (max-width: 479px) {
+  h2 {
+    font-size: 42px;
+    letter-spacing: -0.84px;
+  }
+
+  h3 {
+    font-size: 34px;
+    letter-spacing: -0.68px;
+  }
+
+  h4 {
+    font-size: 28px;
+    letter-spacing: -0.28px;
+  }
+
+  h5 {
+    font-size: 24px;
+    letter-spacing: -0.24px;
+  }
+
+  h6 {
+    font-size: 22px;
+    letter-spacing: -0.22px;
+  }
+
+  .button {
+    padding: 14px 24px;
+    font-size: 17px;
+  }
+}
+
+/* ───────────────────────────────────────────
+   CTA gradient animation — Onramper style
+   ─────────────────────────────────────────── */
+@keyframes ctaGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ───────────────────────────────────────────
+   Reduced motion
+   ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

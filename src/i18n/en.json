@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "title": "SwiftBill — Professional Invoicing for Freelancers & Small Businesses",
+    "description": "Create, send, and track professional invoices in seconds. 15 PDF templates, AI-powered document generation, ZATCA & UAE FTA invoice formatting. Download free on the App Store.",
+    "ogTitle": "SwiftBill — Get Paid Faster",
+    "ogDescription": "Professional invoicing app for freelancers. 15 templates, AI generation, multi-currency support."
+  },
+  "nav": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "download": "Download"
+  },
+  "hero": {
+    "badge": "Trusted by freelancers worldwide",
+    "title": "Professional invoices",
+    "titleHighlight": "in seconds.",
+    "subtitle": "Create, customize, and send beautiful invoices with 15 PDF templates, AI-powered generation, and built-in tax formatting for ZATCA & UAE FTA. Get paid faster — from anywhere.",
+    "cta": "Download Free on the App Store",
+    "ctaSecondary": "See Features",
+    "stats": {
+      "templates": "15 PDF Templates",
+      "languages": "8 Languages",
+      "currencies": "22 Currencies"
+    }
+  },
+  "features": {
+    "label": "Built for Independents",
+    "title": "Everything you need to get paid",
+    "titleHighlight": "from quote to payment",
+    "subtitle": "Whether you're a freelancer, designer, contractor, or consultant — SwiftBill handles documents, expenses, and tax formatting so you focus on your work.",
+    "cta": "Download Free",
+    "items": {
+      "documents": {
+        "title": "invoices",
+        "description": "Create, send, and track professional invoices and receipts"
+      },
+      "estimates": {
+        "title": "estimates",
+        "description": "Win projects with professional estimates and contracts"
+      },
+      "expenses": {
+        "title": "expenses",
+        "description": "Track spending, categorize costs, and see your real profit"
+      },
+      "ai": {
+        "title": "AI tools",
+        "description": "15 templates, AI generation, receipt OCR, and smart autofill"
+      },
+      "templates": {
+        "title": "15 Professional Templates",
+        "description": "Designed for every brand and industry — from Classic to Executive."
+      },
+      "global": {
+        "title": "Global Business Ready",
+        "description": "22 currencies, ZATCA & UAE FTA invoice formatting, and recurring invoices on autopilot."
+      }
+    }
+  },
+  "compliance": {
+    "label": "Tax Formatting",
+    "title": "Built for the Gulf Region",
+    "subtitle": "SwiftBill generates invoices following published ZATCA and UAE FTA format requirements. Requirements may change — always verify with your tax advisor.",
+    "zatca": {
+      "title": "ZATCA Phase 1 Format",
+      "subtitle": "Saudi Arabia",
+      "description": "QR code generation following published TLV encoding specs, Arabic and bilingual invoice formats, VAT calculations, and seller/buyer tax registration number fields.",
+      "features": ["QR Code with TLV Encoding", "Arabic & Bilingual Formats", "VAT Calculation", "Tax Registration Numbers"]
+    },
+    "uae": {
+      "title": "UAE FTA Invoice Format",
+      "subtitle": "United Arab Emirates",
+      "description": "Invoice format following published FTA guidelines with TRN display, VAT breakdown, and English/Arabic variants. Not officially certified by FTA.",
+      "features": ["FTA Format Guidelines", "TRN Display", "English & Arabic Variants", "VAT Breakdown"]
+    },
+    "cta": "Download SwiftBill Free"
+  },
+  "templates": {
+    "label": "Templates",
+    "title": "15 Professional Templates",
+    "subtitle": "Choose the perfect look for your business. Every template is designed for clarity, professionalism, and impact.",
+    "cta": "See All Templates in the App",
+    "categories": {
+      "all": "All",
+      "classic": "Classic",
+      "modern": "Modern",
+      "professional": "Professional"
+    },
+    "items": {
+      "classic": { "name": "Classic", "tag": "Free" },
+      "minimal": { "name": "Minimal", "tag": "Pro" },
+      "modern": { "name": "Modern", "tag": "Pro" },
+      "bold": { "name": "Bold", "tag": "Pro" },
+      "elegant": { "name": "Elegant", "tag": "Pro" },
+      "corporate": { "name": "Corporate", "tag": "Pro" },
+      "freelancer": { "name": "Freelancer", "tag": "Pro" },
+      "commercial": { "name": "Commercial", "tag": "Pro" },
+      "executive": { "name": "Executive", "tag": "Pro" },
+      "navy": { "name": "Navy", "tag": "Pro" },
+      "fresh": { "name": "Fresh", "tag": "Pro" },
+      "refined": { "name": "Refined", "tag": "Pro" },
+      "contractor": { "name": "Contractor", "tag": "Pro" },
+      "studio": { "name": "Studio", "tag": "Pro" },
+      "hourly": { "name": "Hourly", "tag": "Pro" }
+    }
+  },
+  "pricing": {
+    "label": "Pricing",
+    "title": "Simple, transparent pricing",
+    "subtitle": "Start free. Upgrade when you're ready to unlock everything.",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "yearlyDiscount": "Save 44%",
+    "free": {
+      "name": "Free",
+      "price": "$0",
+      "period": "forever",
+      "description": "Perfect for getting started",
+      "features": [
+        "1 invoice per month",
+        "1 receipt per month",
+        "Classic PDF template",
+        "Basic reports",
+        "Cloud sync"
+      ],
+      "cta": "Download Free"
+    },
+    "pro": {
+      "name": "Pro",
+      "priceMonthly": "$5.99",
+      "priceYearly": "$39.99",
+      "periodMonthly": "/month",
+      "periodYearly": "/year",
+      "trialMonthly": "3-day free trial",
+      "trialYearly": "7-day free trial",
+      "description": "Everything you need to grow",
+      "features": [
+        "Unlimited invoices & receipts",
+        "All 15 PDF templates",
+        "AI document generation",
+        "Expense tracking",
+        "Recurring invoices",
+        "ZATCA & UAE FTA formatting",
+        "Multi-currency support",
+        "CSV export",
+        "Priority support"
+      ],
+      "cta": "Start Free Trial"
+    }
+  },
+  "cta": {
+    "title": "Ready to get paid faster?",
+    "subtitle": "Join thousands of freelancers who trust SwiftBill for professional invoicing.",
+    "button": "Download Free on the App Store",
+    "note": "Free to start. No credit card required."
+  },
+  "footer": {
+    "tagline": "Professional invoicing for freelancers and small businesses.",
+    "product": "Product",
+    "legal": "Legal",
+    "support": "Support",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "contact": "Contact Us",
+    "email": "support@getswiftbill.app",
+    "copyright": "SwiftBill. All rights reserved.",
+    "madeWith": "Made with care for freelancers worldwide."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: March 28, 2026"
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: March 26, 2026"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Tips, guides, and updates for freelancers and small businesses.",
+    "readMore": "Read more",
+    "allPosts": "All Posts",
+    "categories": {
+      "all": "All",
+      "tips": "Invoice Tips",
+      "tax": "Tax Guides",
+      "updates": "Product Updates"
+    },
+    "backToBlog": "Back to Blog"
+  }
+}

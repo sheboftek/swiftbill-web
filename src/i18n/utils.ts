@@ -1,13 +1,8 @@
-import en from "./locales/en.json";
-import ar from "./locales/ar.json";
+import en from "./en.json";
+import ar from "./ar.json";
 
-export const languages = {
-  en: "English",
-  ar: "العربية",
-} as const;
-
+export const languages = { en: "English", ar: "العربية" } as const;
 export type Lang = keyof typeof languages;
-
 export const defaultLang: Lang = "en";
 
 const translations = { en, ar } as const;
@@ -20,15 +15,15 @@ export function t(lang: Lang, key: string): string {
       value = (value as Record<string, unknown>)[k];
     } else {
       // Fallback to English
-      value = translations.en;
+      let fallback: unknown = translations.en;
       for (const fk of keys) {
-        if (value && typeof value === "object" && fk in value) {
-          value = (value as Record<string, unknown>)[fk];
+        if (fallback && typeof fallback === "object" && fk in fallback) {
+          fallback = (fallback as Record<string, unknown>)[fk];
         } else {
-          return key; // Return key if not found
+          return key;
         }
       }
-      return typeof value === "string" ? value : key;
+      return typeof fallback === "string" ? fallback : key;
     }
   }
   return typeof value === "string" ? value : key;
@@ -41,18 +36,4 @@ export function getDir(lang: Lang): "ltr" | "rtl" {
 export function getLocalizedPath(lang: Lang, path: string = "/"): string {
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
   return `/${lang}${cleanPath === "/" ? "" : cleanPath}`;
-}
-
-export function getLangFromUrl(url: URL): Lang {
-  const [, lang] = url.pathname.split("/");
-  if (lang in languages) return lang as Lang;
-  return defaultLang;
-}
-
-export function getAlternateLinks(currentLang: Lang, currentPath: string) {
-  const pathWithoutLang = currentPath.replace(`/${currentLang}`, "") || "/";
-  return Object.keys(languages).map((lang) => ({
-    lang,
-    href: `https://getswiftbill.app/${lang}${pathWithoutLang === "/" ? "" : pathWithoutLang}`,
-  }));
 }
